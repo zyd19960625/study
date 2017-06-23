@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<style type="text/css">
+			body,html{
+		        position: relative;
+		    }
+		    body {
+		        background: #eee;
+		        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;		        
+		        color:#000;
+		        margin: 0;
+		        padding: 0;
+		    }
+		    .swiper-container {
+		        width:100%;
+		        height: 3rem;
+		        
+		    }
+		    .swiper-wrapper img{
+		    	width: 100%;
+		    	height: 3rem;
+		    }
+		    .swiper-slide {
+		        text-align: center;
+		        background: #fff;
+		        
+		        /* Center slide text vertically */
+		        display: -webkit-box;
+		        display: -ms-flexbox;
+		        display: -webkit-flex;
+		        display: flex;
+		        -webkit-box-pack: center;
+		        -ms-flex-pack: center;
+		        -webkit-justify-content: center;
+		        justify-content: center;
+		        -webkit-box-align: center;
+		        -ms-flex-align: center;
+		        -webkit-align-items: center;
+		        align-items: center;
+		    }
+			
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-default met-nav " role="navigation">
+    <div class="container">
+		<div class="row">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle hamburger hamburger-close collapsed"
+				data-target="#navbar-default-collapse" data-toggle="collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="hamburger-bar"></span>
+				</button>
+
+				<a href="http://show.metinfo.cn/muban/res013/323/" class="navbar-brand navbar-logo vertical-align" title="科技公司">
+					<h1 class='hide'>科技公司</h1>
+					<div class="vertical-align-middle"><img style="margin-top: -0.1rem;height: 0.228rem; " src="img/1464062976.png" alt="科技公司" title="科技公司" /></div>
+				</a>
+
+				<h2 class='hide'></h2>
+
+			</div>
+			<div class="collapse navbar-collapse navbar-collapse-toolbar nav-shop" id="navbar-default-collapse">
+
+
+	<div class="navbar-right vertical-align text-center animation-slide-top met-nav-login">
+		<div style="float: left;height: 0.2rem;line-height: 0.2rem;" class="vertical-align-middle margin-right-10"><a href="http://show.metinfo.cn/muban/res013/323/member/register_include.php?lang=cn" class="btn btn-squared btn-success">注册</a></div>
+		<div style="float: left;height: 0.2rem;line-height: 0.2rem;margin-left: 0.05rem;" class="vertical-align-middle"><a href="http://show.metinfo.cn/muban/res013/323/member/login.php?lang=cn" class="btn btn-squared btn-primary btn-outline" >登录</a></div>
+	</div>
+
+
+				<ul class="nav navbar-nav navbar-right navlist">
+					<li><a href="http://show.metinfo.cn/muban/res013/323/" title="首页" class="link active">首页</a></li>
+
+					<li class="dropdown margin-left-40">
+						<a
+							class="dropdown-toggle link "
+							data-toggle="dropdown"
+							data-hover="dropdown"
+							href="product/"
+							aria-expanded="false"
+							
+							title="产品"
+						>产品 <span class="caret"></span></a>
+						<ul class="dropdown-menu dropdown-menu-right animate">
+
+							<li class='nav-parent visible-xs'><a href="product/"  title="全部">全部</a></li>
+
+
+							<li><a href="product/product.php?lang=cn&class2=112" class=""  title="智能手表">智能手表</a></li>
+
+							<li><a href="product/product.php?lang=cn&class2=113" class=""  title="智能眼镜">智能眼镜</a></li>
+
+							<li><a href="product/product.php?lang=cn&class2=114" class=""  title="机器人">机器人</a></li>
+
+							<li><a href="product/product.php?lang=cn&class2=118" class=""  title="体感车">体感车</a></li>
+
+							<li><a href="product/product.php?lang=cn&class2=119" class=""  title="无人机">无人机</a></li>
+
+						</ul>
+					</li>
+
+
+
+					<li class="margin-left-40"><a href="service/show.php?lang=cn&id=129"  title="支持" class="link ">支持</a></li>
+
+
+
+					<li class="margin-left-40"><a href="blog/"  title="博客" class="link ">博客</a></li>
+
+
+
+					<li class="margin-left-40"><a href="about/show.php?lang=cn&id=125"  title="关于" class="link ">关于</a></li>
+
+
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</nav>
+
+	<!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/1464084575.png"/></div>
+            <div class="swiper-slide"><img src="img/1464083856.png"/></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+	</body>
+	<!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+	<script src="../aaaaaaaa/js/jquery-2.1.0.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',//分页
+        nextButton: '.swiper-button-next',//下一页按钮
+        prevButton: '.swiper-button-prev',//前一页按钮
+        paginationClickable: true,//为ture表示发生swiper
+        spaceBetween: 30,//slide之间的间距
+        centeredSlides: true,//设定为true时，活动块会居中，而不是默认状态下的居左。
+        autoplay: 1500,//2.5秒执行一次
+        loop:true,
+        autoplayDisableOnInteraction: false//如果设置为false，用户操作swiper之后自动切换不会停止，每次都会重新启动autoplay。
+    });
+    
+    
+	window.onload=function(){
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/6.5+"px";
+		window.addEventListener("resize",function(){
+		    document.documentElement.style.fontSize=document.documentElement.clientWidth/6.5+"px";	
+		})
+	}
+
+    </script>
+</html>

@@ -1,0 +1,50 @@
+01
+<!doctype html>
+02
+<html>
+03
+<body>
+04
+<canvas id="can" width="400" height="400" style="background:Black"></canvas>
+05
+<script>
+06
+    var sn=[42,41],dz=43,fx=1,n,ctx=document.getElementById("can").getContext("2d");
+07
+    function draw(t,c){
+08
+        ctx.fillStyle=c;
+09
+        ctx.fillRect(t%20*20+1,~~(t/20)*20+1,18,18);
+10
+    }
+11
+    document.onkeydown=function(e){fx=sn[1]-sn[0]==(n=[-1,-20,1,20][(e||event).keyCode-37]||fx)?fx:n};
+12
+    !function(){
+13
+        sn.unshift(n=sn[0]+fx);
+14
+        if(sn.indexOf(n,1)>0 || n<0||n>399||fx==1&&n%20==0||fx==-1&&n%20==19) return alert("GAME OVER");
+15
+        draw(n,"Lime");
+16
+        if(n==dz){
+17
+            while(sn.indexOf(dz=~~(Math.random()*400))>=0);
+18
+            draw(dz,"Yellow");
+19
+        }else
+20
+            draw(sn.pop(),"Black");
+21
+        setTimeout(arguments.callee,130);
+22
+    }();
+23
+</script>
+24
+</body>
+25
+</html>
