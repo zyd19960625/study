@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#a{width: 500px;height: 500px;margin: 100px auto 0;}
+			#p1{width: 500px;height: 30px;text-align: center;line-height: 30px;}
+			#b{width: 500px;height: 300px;border: 1px black solid;margin-top: 30px;}
+			#inp{width: 400px;height: 30px;border: 1px black solid;margin-top: 20px;margin-left: 5px;}
+			#but{width: 50px;height: 32px;margin-top: 20px;margin-left: 30px;}
+		</style>
+	</head>
+	<body>
+		<div id="a">
+			<p id="p1">用户留言</p>
+			<div id="b">
+				
+			</div>
+			<input type="text" id="inp" placeholder="请输入内容" />
+			<button id="but" onclick="func()">提交</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var B=document.getElementById("b");
+		var INP=document.getElementById("inp");
+		function func () {
+			var  P=document.createElement("p");
+			var nerd=new Date();
+			
+			B.appendChild(P);
+			var  P1=document.createElement("p");
+			B.appendChild(P1);
+			if(INP.value){
+			P.innerHTML="时间："+nerd.toLocaleString();
+			P.style.color="red";
+			P1.innerHTML="内容："+INP.value;
+			}
+			INP.onfocus=function  () {
+				INP.value=null;
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.wrapper {
+				width: 1000px;
+				margin: 0 auto;
+			}
+			
+			h2 {
+				padding: 10px;
+				text-align: center;
+			}
+			
+			.ind02 {
+				width: 200px;
+				height: 380px;
+				background: #ccc;
+				margin: 0 auto;
+				padding: 10px;
+			}
+			
+			.ind02 .ind02_lunbo {
+				width: 200px;
+				height: 380px;
+			}
+			
+			.ind02 .ind02_lunbo .ind02_top {
+				cursor: pointer;
+				width: 200px;
+				height: 20px;
+				background: #666;
+				line-height: 20px;
+				text-align: center;
+			}
+			
+			.ind02 .ind02_lunbo .ind02_top:hover {
+				color: #fff;
+				background: #333;
+			}
+			
+			.ind02 .ind02_lunbo .ind02_bottom {
+				cursor: pointer;
+				width: 200px;
+				height: 20px;
+				background: #666;
+				line-height: 20px;
+				text-align: center;
+			}
+			
+			.ind02 .ind02_lunbo .ind02_bottom:hover {
+				color: #fff;
+				background: #333;
+			}
+			
+			.ind02 .ind02_lunbo .ind02_center {
+				position: relative;
+				height: 330px;
+				width: 200px;
+				overflow: hidden;
+				margin-top: 10px;
+			}
+			
+			.ind02 .ind02_lunbo ul {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 9999px;
+			}
+			
+			.ind02 .ind02_lunbo ul li {
+				list-style: none;
+				margin-bottom: 10px;
+				width: 200px;
+				height: 100px;
+				color: #FFF;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<h2>上下切换</h2>
+			<div class="ind02">
+				<div class="ind02_lunbo">
+					<div class="ind02_top">上一页</div>
+					<div class="ind02_center">
+						<ul id="ind02_tp1">
+							<li><img src="img/a1.jpg" width="200" height="100"></li>
+							<li><img src="img/a2.jpg" width="200" height="100"></li>
+							<li><img src="img/a3.jpg" width="200" height="100"></li>
+							<li><img src="img/a4.jpg" width="200" height="100"></li>
+							<li><img src="img/a5.jpg" width="200" height="100"></li>
+						</ul>
+					</div>
+					<div class="ind02_bottom">下一页</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="../JQ基础学习/js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		function time() {
+			$('#ind02_tp1:not(:animated)').animate({
+					'top': -110 + 'px'
+				},
+				function() {
+					$('#ind02_tp1').find('li').eq(0).appendTo('#ind02_tp1')
+					$('#ind02_tp1').css('top', 0)
+				}
+			)
+		}
+		setInterval(time, 2000)
+
+		$('.ind02_top').click(function() {
+			$('li:last').prependTo('#ind02_tp1')
+			$('#ind02_tp1').css('top', -110)
+			$('#ind02_tp1').stop().animate({
+				'top': 0
+			})
+		})
+
+		$('.ind02_bottom').click(function() {
+			$('#ind02_tp1:not(:animated)').animate({
+				'top': -110 + 'px'
+			}, function() {
+				$('#ind02_tp1').find('li').eq(0).appendTo('#ind02_tp1')
+				$('#ind02_tp1').css('top', 0)
+			})
+		})
+	</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			/*#a{position: relative;}*/
+		</style>
+	</head>
+	
+	<body>
+		<h1 id="b">还好</h1>
+		<div id="a">
+			<div id="d">
+				吧
+			</div>
+			<div id="c">ba</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	    console.log(document.body.children);
+	    console.log(document.body.childNodes);
+	    console.log(document.body.firstChild);
+	    console.log(document.body.firstElementChild);
+	    console.log(document.body.lastChild);
+	    console.log(document.body.lastElementChild);
+	    
+	    
+	    console.log(document.getElementById("b").nextSibling);
+	    console.log(document.getElementById("b").nextElementSibling);
+	    console.log(document.getElementById("a").previousSibling);
+	    console.log(document.getElementById("a").previousElementSibling);
+	    console.log(document.getElementById("c").parentNode);
+	    console.log(document.getElementById("c").offsetParent);
+	</script>
+</html>

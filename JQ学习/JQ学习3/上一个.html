@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#a{width: 300px;height: 200px;position: relative;overflow: hidden;}
+			#b{width: 1440px;}
+			img{width: 350px;height: 200px;float: left;}
+			#p1,#p2{position: absolute;background: lightblue;width: 20px;height: 64px;}
+			#p1{left: 5px;top: 35%;}
+			#p2{right: 5px;top: 35%;}
+		
+		</style>
+	</head>
+	<body>
+		<div id="a">
+            <p id="p1">上一个</p>
+            <div id="b">
+				<img src="../jQuery动画效果/animated动画/images/slide-2.jpg"/>
+				<img src="../jQuery动画效果/按鼠标进入方向运动/images/7.jpg"/>
+				<img src="../jQuery动画效果/瀑布流/waterfall/4.jpg"/>
+				<img src="../jQuery动画效果/瀑布流/waterfall/56.jpg"/>
+			</div>
+			<p id="p2">下一个</p>
+		</div>
+	</body>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+//		i=0;
+//		$('#p2').click(function(){
+//			$('#b').animate({'margin-left':-350*i+'px'},300)
+//			i++;
+//			if (i==4) {
+//				i=0;
+//			}
+//		})
+//		j=3;
+//		$('#p1').click(function(){
+//			$('#b').animate({'margin-left':-350*j+'px'},300)
+//			j--;
+//			if (j==-1) {
+//				j=3;
+//			}
+//		})
+		
+		$('#p2').click(function(){
+			$('img').first().appendTo('#a')
+		})
+		
+		$('#p1').click(function(){
+			$('img').last().prependTo('#a')
+		})
+	</script>
+</html>

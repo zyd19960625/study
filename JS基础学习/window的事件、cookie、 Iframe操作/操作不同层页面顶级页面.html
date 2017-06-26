@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			button{display: block;}
+		</style>
+	</head>
+	<body>
+		<button id="a">操作子页面</button>
+		
+		<iframe src="操作不同层页面二级页面.html" width="1000" height="600" id="aa"></iframe>
+	</body>
+	<script type="text/javascript">
+		var A=document.getElementById('a');
+		var AA=document.getElementById('aa');
+		A.onclick=function(){
+			AA.contentWindow.document.body.style.background="deepskyblue";
+			AA.contentWindow.document.getElementById("aaa").style.background="yellow";
+		}
+	</script>
+</html>

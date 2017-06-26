@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		for (a=1;a<=9;a++) {
+			for (b=0;b<=9;b++) {
+				for (c=0;c<=9;c++) {
+					if (a*100+b*10+c==a*a*a+b*b*b+c*c*c) {
+						document.write(a*100+b*10+c+"<br/>")
+					}
+				}
+			}
+		}
+		
+		document.write("<br/>")
+		
+		for (var m=100;m<=999;m++) {
+			//document.write(m+"<br/>")
+			if(Math.pow(parseInt(m/100),3)+Math.pow(parseInt(m%100/10),3)+Math.pow(parseInt(m%10),3)==m){
+				document.write(m+"<br/>");
+			}
+		}
+	</script>
+</html>

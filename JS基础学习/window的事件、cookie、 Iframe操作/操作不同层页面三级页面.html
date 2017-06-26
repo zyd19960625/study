@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="c">操作顶级页面</button>
+	</body>
+	<script type="text/javascript">
+		var C=document.getElementById('c');
+		C.onclick=function(){
+			window.top.document.body.style.background="black";
+		}
+	</script>
+</html>

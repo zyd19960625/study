@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+//		一维数组
+		var a=new Array()
+		a[0]="小小";
+		a[1]="大大";
+		a[2]="东东";
+		a[3]="西西";
+		a[4]="楠楠";
+		a[5]="贝贝";
+		for (var a1=0;a1<=5;a1++) {
+			document.write(a[a1]+"  ");
+		}
+		document.write("<br/>");
+		var b=new Array("小小","大大","明明","卡卡","哔哔","嘟嘟");
+		for (var b1=0;b1<=5;b1++) {
+			document.write(b[b1]+"  ");
+		}
+//		二维数组
+		document.write("<br/>");
+		var c=new Array(["a","b","c"],["d","e","f","g"],["我的","你的","他的"]);
+		document.write(c[2][2]);
+		document.write("<br/>");
+		for (var d=0;d<c.length;d++) {
+//			document.write(c[d]);
+			document.write("<br/>");
+			for (var e=0;e<c[d].length;e++) {
+				document.write(c[d][e]+" ");
+			}
+		}
+		document.write("<br/>");
+	</script>
+</html>

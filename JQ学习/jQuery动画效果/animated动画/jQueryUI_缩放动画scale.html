@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUI_缩放动画scale</title>
+    <style>
+        p {background-color:#bca; width:200px; border:1px solid green;}
+        div{width:570px; height:270px;background-color: red;}
+    </style>
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         * explode effect可与show/hide/toggle等方法一起使用。按百分比缩放元素。
+         * 语法：selector.hide|show|toggle( "scale", {arguments}, speed );
+         * direction − 效果的方向. 可以是"both", "vertical" or "horizontal". 默认是both.
+           from − 一开始的状态，通常不需要。这将是一个对象，以如下的形式 { height: .., width: .. }.
+           origin − 消失点。这是一个数组，默认设置为['middle','center'].
+           percent − 缩放的百分比，数字。默认是0/100.
+           scale − 元素的哪个区域将被重新设置大小: 'both', 'box', 'content'
+                   其中：Box resizes the border and padding of the element
+                         Content resizes any content inside of the element.
+                         Default is both.
+         * */
+        $(document).ready(function() {
+
+            $("#hide").click(function(){
+                $(".target").hide( "scale", {percent: 200, direction: 'horizontal'}, 2000 );
+            });
+
+            $("#show").click(function(){
+                $(".target").show( "scale", {percent: 200, direction: 'vertical' }, 2000 );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>单击下面任意一个按钮</p>
+
+<button id = "hide"> 隐藏 </button>
+<button id = "show"> 显示</button>
+
+<div class="target"></div>
+</body>
+</html>

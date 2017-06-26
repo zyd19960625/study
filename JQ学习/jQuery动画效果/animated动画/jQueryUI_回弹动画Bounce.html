@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回弹动画Bounce_jQueryUI</title>
+    <style>
+        p {
+            background-color: #bca;
+            width: 200px;
+            border: 1px solid green;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 100%;
+            margin-top: 100px;
+        }
+    </style>
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         * 可以使用effect()方法实现弹跳效果。可以水平或垂直回弹元素多次。
+         * 语法：selector.effect( "bounce", {arguments}, speed );
+         * arguments参数：
+         * direction − 回弹的方向。可以是 "up", "down", "left", "right". 默认是 "up".
+         distance − 弹跳的距离. 默认是 20
+         mode: 效果的模式。可以是"show", "hide" 或 "effect". 默认是"effect".
+         times − 弹跳的次数. 默认是5.
+         * */
+        $(document).ready(function() {
+
+            $("#button").click(function(){
+                $(".target").effect( "bounce", {distance:80,direction:"left",times:8}, 2000);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>单击下面的按钮</p>
+<button id="button">弹跳</button>
+
+<div class="target"></div>
+</body>
+</html>

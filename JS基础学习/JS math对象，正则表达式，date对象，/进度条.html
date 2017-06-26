@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#a{width: 500px;height: 20px;border: 1px black solid;margin: 200px auto 0;}
+			#b{height: 20px;}
+			#mm{margin: 0 auto;width: 20px;height: 20px;}
+		</style>
+	</head>
+	<body>
+		<div id="a">
+			<div id="b">
+				
+			</div>
+		</div>
+		<p id="mm"></p>
+	</body>
+	<script type="text/javascript">
+		var aa=0;
+		function vv(){
+			aa=aa+5;
+			document.getElementById("b").style.width=aa+"px";
+			document.getElementById("b").style.background="red";
+//          document.getElementById("b").innerHTML=aa;
+			if (aa==500) {
+				clearInterval(time);
+			}
+		}
+		var time=setInterval(vv,100);
+		    
+		var m=1;    
+		function mm1 () {
+			document.getElementById("mm").innerHTML=m+"%";
+			m++;
+			if (m==101) {
+				clearInterval(time1);
+			}
+		}
+		var time1=setInterval(mm1,100);
+	</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			td{width: 30px;height: 30px;border: 1px black solid;text-align: center;}
+		</style>
+	</head>
+	<body id="bo">
+		<input type="text" id="te1"/>
+		<input type="text" id="te2"/>
+		<input type="button" id="but" onclick="func()" value="提交"/>
+	</body>
+	<script type="text/javascript">
+		var TE1=document.getElementById("te1");
+		var TE2=document.getElementById("te2");
+		var BUT=document.getElementById("but");
+		function func(){
+			var TB=document.createElement("table");
+			TB.style.border="1px black solid";
+			var te1va=Math.floor(TE1.value);
+			var te2va=Math.floor(TE2.value);
+			for (var co1=0;co1<te1va;co1++) {
+				var TR=document.createElement("tr");
+				for (var co2=0;co2<te2va;co2++) {
+				var TD=document.createElement("td");
+				TD.innerHTML=Math.floor(Math.random()*9);
+				TD.style.background=randomColor();
+				TR.appendChild(TD);
+				}
+				TB.appendChild(TR);
+			}
+			var BO=document.getElementById("bo");
+		BO.appendChild(TB);
+		}
+		
+	</script>
+	<script src="../js/JS通用样式表base.js"></script>
+</html>

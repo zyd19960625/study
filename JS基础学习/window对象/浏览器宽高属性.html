@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<p id="a" onclick="fun()"></p>
+		<p id="b" onclick="fun()"></p>
+		<p id="c" onclick="fun()"></p>
+		<p id="d" onclick="fun()"></p>
+	</body>
+	<script type="text/javascript">
+		var A=document.getElementById("a");
+		var B=document.getElementById("b");
+		var C=document.getElementById("c");
+		var D=document.getElementById("d");
+		function fun(){
+			A.innerHTML=window.innerHeight;
+		    B.innerHTML=window.innerWidth;
+		    C.innerHTML=window.outerHeight;
+		    D.innerHTML=window.outerWidth;
+		}
+		setInterval(fun,50);
+	</script>
+</html>

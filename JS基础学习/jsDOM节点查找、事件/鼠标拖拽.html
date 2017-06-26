@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a,#b,#c,#d,#e{width: 200px;height: 200px;border-radius: 50%;border: 10px black solid; cursor: all-scroll;position: absolute;}
+			#b{z-index: 2;border-color: red;}
+			#c{z-index: 3;border-color: green;}
+			#d{z-index: 4;border-color: yellow;}
+			#e{z-index: 5;border-color: blue;}
+		</style>
+	</head>
+	<body>
+		<div id="a">
+			
+		</div>
+		<div id="b">
+			
+		</div>
+		<div id="c">
+			
+		</div>
+		<div id="d">
+			
+		</div>
+		<div id="e">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var aa=document.getElementById("a");
+		aa.onmousedown=function  (ev) {
+			var ev=ev||window.event;
+			var aa1=ev.clientX-aa.offsetLeft;
+			var aa2=ev.clientY-aa.offsetTop;
+			document.onmousemove=function  (ev) {
+				var ev=ev||window.event;
+				aa.style.left=ev.clientX-aa1+'px';
+				aa.style.top=ev.clientY-aa2+'px';
+			}
+			document.onmouseup=function  () {
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+		}
+		var bb=document.getElementById("b");
+		bb.onmousedown=function  (ev) {
+			var ev=ev||window.event;
+			var bb1=ev.clientX-bb.offsetLeft;
+			var bb2=ev.clientY-bb.offsetTop;
+			document.onmousemove=function  (ev) {
+				var ev=ev||window.event;
+				bb.style.left=ev.clientX-bb1+'px';
+				bb.style.top=ev.clientY-bb2+'px';
+			}
+			document.onmouseup=function  () {
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+		}
+		var cc=document.getElementById("c");
+		cc.onmousedown=function  (ev) {
+			var ev=ev||window.event;
+			var cc1=ev.clientX-cc.offsetLeft;
+			var cc2=ev.clientY-cc.offsetTop;
+			document.onmousemove=function  (ev) {
+				var ev=ev||window.event;
+				cc.style.left=ev.clientX-cc1+'px';
+				cc.style.top=ev.clientY-cc2+'px';
+			}
+			document.onmouseup=function  () {
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+		}
+		var dd=document.getElementById("d");
+		dd.onmousedown=function  (ev) {
+			var ev=ev||window.event;
+			var dd1=ev.clientX-dd.offsetLeft;
+			var dd2=ev.clientY-dd.offsetTop;
+			document.onmousemove=function  (ev) {
+				var ev=ev||window.event;
+				dd.style.left=ev.clientX-dd1+'px';
+				dd.style.top=ev.clientY-dd2+'px';
+			}
+			document.onmouseup=function  () {
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+		}
+		var ee=document.getElementById("e");
+		ee.onmousedown=function  (ev) {
+			var ev=ev||window.event;
+			var ee1=ev.clientX-ee.offsetLeft;
+			var ee2=ev.clientY-ee.offsetTop;
+			document.onmousemove=function  (ev) {
+				var ev=ev||window.event;
+				ee.style.left=ev.clientX-ee1+'px';
+				ee.style.top=ev.clientY-ee2+'px';
+			}
+			document.onmouseup=function  () {
+				document.onmousemove=null;
+			}
+		}
+	</script>
+</html>

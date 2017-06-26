@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://baidu.com" id="a">百度</a>
+	</body>
+	<script type="text/javascript">
+		var A=document.getElementById("a");
+		A.onclick=function(ev){
+			ev=ev||window.event;
+			alert("该链接已失效  "+A.href+"  但是我不会跳转");
+			return false;
+		}
+	</script>
+</html>

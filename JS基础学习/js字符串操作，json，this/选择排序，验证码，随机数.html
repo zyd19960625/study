@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var arr=[0,4,5,1,2,7,4];
+//		function  aa(){
+			for (i=0;i<arr.length;i++) {
+				for (j=i+1;j<=arr.length;j++) {
+					if (arr[i]>arr[j]) {
+						var bb=arr[i];
+						arr[i]=arr[j];
+						arr[j]=bb;
+					}
+				}
+			}
+//		}
+//		aa();
+		document.write(arr);
+		document.write("<br/>")
+		
+		
+		var cc="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+		var cc1=Math.floor(Math.random()*(cc.length-1));
+		var cc2=Math.floor(Math.random()*(cc.length-1));
+		var cc3=Math.floor(Math.random()*(cc.length-1));
+		var cc4=Math.floor(Math.random()*(cc.length-1));
+		document.write(cc.substr(cc1,1)+" "+cc.charAt(cc2)+" "+cc.charAt(cc3)+" "+cc.charAt(cc4));
+		document.write("<br/>")
+		
+		
+		var dd=Math.floor(Math.random()*99999);
+		document.write(dd);
+		document.write("<br/>")
+		var dd1=new Array();
+		while (dd){
+			dd1.unshift(dd%10);
+			dd=Math.floor(dd/10);
+		}
+		for (ddi=0;ddi<dd1.length;ddi++) {
+			document.write(dd1[ddi]);
+		}
+		
+	</script>
+</html>

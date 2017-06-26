@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var a1="write ment";
+		var a2=/ment/;
+		document.write(a1.match(a2)+"<br/>");
+		var a3="我s 我ss一个 他不我他不ss 哈哈";
+		var a4=/我/gi;
+		document.write(a3.match(a4)+"<br/>");
+		var a5=true;
+//		alert(typeof(a5));
+		var a6=new Array("一个","两个","三个");
+		document.write(a6[0],a6[1],a6[2]+"<br/><br/>");
+		document.write(Math.floor(Math.random()*1000)+"<br/>");
+		document.write(Math.round(1.7)+"<br/>");
+		document.write(Math.ceil(2.01)+"<br/>");
+		document.write(parseInt(8.333)+"<br/>");
+        document.write(parseInt(4.66666)+"<br>");
+        document.write(Math.floor(3.9)+"<br/><br/>");
+		
+		
+		var a7=new Date;
+		document.write(a7+"<br/>");
+		document.write(a7.getFullYear()+"<br/>");
+		document.write(a7.getMonth()+"<br/>");
+		document.write(a7.getDate()+"<br/>");
+		document.write(a7.getDay()+"<br/>");
+		document.write(a7.getHours()+"<br/>");
+		document.write(a7.getMinutes()+"<br/>");
+		document.write(a7.getSeconds()+"<br/>");
+		
+		var a8="ddd bbb ccc mmm";
+		var a9=/ddb/;
+		document.write(a8.match(a9)+"<br/>");
+		var b1="阿达萨达立刻付款啦";
+		document.write(typeof(b1)+"<br/>");
+		var b2=193.214;
+		document.write(typeof(b2)+"<br/>");
+		var b3=true;
+		document.write(typeof(b3)+"<br/>");
+		var b4=false;
+		document.write(typeof(b4)+"<br/>");
+		var b5=new Array();
+		document.write(typeof(b5)+"<br/>");
+		var b6;
+		document.write(typeof(b)+"<br/>");
+		var b7={
+			b8:"张三",
+			b9:"156cm",
+			b10:"55kg"
+		};
+		document.write(b7.b8+"<br/>");
+		document.write(b7.b9+"<br/>");
+		document.write(b7.b10+"<br/>");
+		const c1=10;
+		document.write(c1+"<br/>");
+		var c2=2;
+		var c3=3;
+		var c4=c2+c3;
+		var c2=c4;
+		document.write(c4+"<br/>");
+		document.write(c2+"<br/><br/>");
+		
+		c5=12
+		function test(){
+			var c5=14
+			document.write(c5+"<br/>")
+		}test()
+		document.write(c5)
+		
+	</script>
+</html>

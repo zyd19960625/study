@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<form id="maf">
+		<input type="text" id="te1"/>
+		<input type="submit" id="te2"/>
+		<input type="reset" id="te3"/>
+		</form>
+		<img src="img/eg_bulboff.gif" onerror='alert("图片加载错误")'/>
+	</body>
+	<script type="text/javascript">
+		var MAF=document.getElementById('maf')
+		var TE1=document.getElementById("te1");
+		TE1.onselect=function  (ev) {
+			var ev=ev || window.event;
+			alert('文本被选中');
+		}
+		var TE2=document.getElementById("te2");
+		MAF.onsubmit=function  (ev) {
+			var ev=ev || window.event;
+			alert('提交按钮触发');
+			return false; 
+		}
+		var TE3=document.getElementById("te3");
+		MAF.onreset=function  (ev) {
+			var ev=ev || window.event;
+			alert('表单正在被重置');
+			return false; 
+		}
+	</script>
+</html>

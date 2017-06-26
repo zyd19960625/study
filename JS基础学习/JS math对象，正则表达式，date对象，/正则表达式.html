@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#dd3,#ddd4,#ddd5,#ddd6{display: none;}
+			#ddd5{width: 200px;height: 200px;background: red;}
+		</style>
+	</head>
+	<body>
+		用户名：<input type="text" id="dd1"/><br />
+		密码：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="dd7"/>
+		<input type="button" value="提交" onclick="dd5()"/>
+		<p id="dd3">请输入正确的用户名和密码</p>
+		<p id="ddd6">密码正确,请输入正确的用户名</p>
+		<p id="ddd4">用户名正确,请输入正确的密码</p>
+		<p id="ddd5">用户名和密码正确</p>
+	</body>
+	<script type="text/javascript">
+//		var aa="AaBbCcbDdd";
+//		var a=/c/gi;
+//		document.write(a.test(aa)+"<br/>");
+//		document.write(aa.match(a)+"<br/>");
+//		document.write(aa.search(a)+"<br/>");
+//		document.write(aa.replace(a,"m")+"<br/>");
+//		console.log(aa.split(a));
+//		
+//		var cc=['a','b','c','d','c','4','d'];
+//			for (i=0;i<cc.length;i++) {
+//				if(cc[i]=='c' || cc[i]=='d'){
+//	            cc[i]="m"; 
+//			}
+//		}
+//		document.write(cc);
+		
+		document.write("<br/>")
+		var dd=/^[a-zA-Z0-9]{6,16}$/;
+		var ee=/^[\u4e00-\u9fa5]{4,10}$/;
+		var dd4=document.getElementById("dd3");
+		var ddd1=document.getElementById("dd7");
+		var ddddd1=document.getElementById("ddd5");
+		function dd5 () {
+			var dd9=ee.test(dd1.value);
+			var ddd2=dd.test(dd7.value);
+			if (!dd9 && !ddd2) {
+				dd4.style.display="block";
+				document.getElementById("ddd4").style.display="none";
+				document.getElementById("ddd6").style.display="none";
+				document.getElementById("ddd5").style.display="none";
+			}
+			else  if(!dd9 && ddd2){
+				dd4.style.display="none";
+				document.getElementById("ddd4").style.display="none";
+				document.getElementById("ddd5").style.display="none";
+				document.getElementById("ddd6").style.display="block";
+			}
+			else  if(dd9 && !ddd2){
+				dd4.style.display="none";
+				document.getElementById("ddd6").style.display="none";
+				document.getElementById("ddd5").style.display="none";
+				document.getElementById("ddd4").style.display="block";
+			}
+			else  if(dd9 && ddd2){
+				dd4.style.display="none";
+				document.getElementById("ddd6").style.display="none";
+				document.getElementById("ddd4").style.display="none";
+				document.getElementById("ddd5").style.display="block";
+			}
+		}
+//		alert(dd4.innerHTML);
+	</script>
+</html>

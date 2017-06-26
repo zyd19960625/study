@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUI_滑动动画Slide</title>
+    <style>
+        p {background-color:#bca; width:200px; border:1px solid green;}
+        div{ width:100px; height:100px; background:red;}
+    </style>
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         * Slide effect可与show/hide/toggle等方法一起使用。这会将元素滑出视口。
+         * 语法：selector.hide|show|toggle( "slide", {arguments}, speed );
+         * direction − 效果的方向. 可以是"left", "right", "up", "down". 默认left.
+           distance − 效果的距离. 根据direction选项，设为元素的高或宽。
+           mode − 效果的模式。可以是"show" 或 "hide". 默认是show.
+         * */
+        $(document).ready(function() {
+
+            $("#hide").click(function(){
+                $(".target").hide( "slide", { direction: "left"  }, 2000 );
+            });
+
+            $("#show").click(function(){
+                $(".target").show( "slide", {direction: "up" }, 2000 );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>单击下面任意一个按钮</p>
+
+<button id = "hide"> 隐藏 </button>
+<button id = "show"> 显示</button>
+
+<div class="target"></div>
+</body>
+</html>

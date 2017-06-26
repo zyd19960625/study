@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#a{width: 100px;height: 210px;float: left;}
+			li{width: 98px;height: 28px;border: 1px black solid;cursor: context-menu;
+			text-align: center;line-height: 28px; margin-top: 5px;list-style: none;}
+			img{width: 560px;height: 210px;float: right;display: none;}
+			#a0{width: 670px;height: 210px;margin-top: 200px;}
+		</style>
+	</head>
+	<body>
+		<div id="a0">
+			<div id="a">
+				<li class="a1">图片1</li>
+				<li>图片2</li>
+				<li>图片3</li>
+				<li>图片4</li>
+				<li>图片5</li>
+				<li>图片6</li>
+			</div>
+			<div id="b">
+				<img src="img/1.jpg" class="b1"/>
+				<img src="img/2.jpg"/>
+				<img src="img/3.jpg"/>
+				<img src="img/4.jpg"/>
+				<img src="img/5.jpg"/>
+				<img src="img/6.jpg"/>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var LI=document.getElementsByTagName('li');
+		var IMG=document.getElementsByTagName('img');
+		var A1=document.getElementsByClassName('a1');
+		var B1=document.getElementsByClassName('b1');
+		for (i=0;i<LI.length;i++) {
+			LI[i].index=i;
+			LI[i].onclick=function(){
+				for (j=0;j<LI.length;j++) {
+					LI[j].className=null;
+					IMG[j].className=null;
+					IMG[j].style.display='none';
+					LI[j].style.background='white';
+				}
+				this.className='a1';
+				A1[0].style.background='skyblue';
+				IMG[this.index].className='b1';
+				B1[0].style.display='block';
+			}
+		}
+	</script>
+</html>

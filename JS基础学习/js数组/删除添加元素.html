@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		Array.splice(index,howmany,item1,......itemx);
+//		index:必需,规定从何处添加/删除新元素.该元素是从插入和(或)删除的数组元素的下标,必须是数字.
+//      howmany:可选,规定应该删除多少元素,必须是数字,但可以是0,如果未规定此参数,则删除从index开始到元数组结束的所有元素;
+//      iteam1,......iteamx:可选,要添加的新元素.
+		var a=new Array("01--张三","02--李四","03--王五","04--马六","05--二大","06--可靠");
+		a.splice(3,2,"小二","赵琦");
+		document.write(a);
+		document.write("<br/>");
+		
+		var b=new Array("01--张三","02--李四","03--王五","04--马六");
+		b.splice(1,0,"小二","赵琦");
+		document.write(b);
+		document.write("<br/>");
+		
+		var c=new Array("01--张三","02--李四","03--王五","04--马六");
+		c.splice(1,0);
+		document.write(c);
+		document.write("<br/>");
+		document.write(c.length)
+		var a=0;//鸡
+		var b=0;//兔
+		for(var a=0;a<1200;a++){
+			b=1200-a;
+			if(2*a+4*b==2800){
+				alert("鸡有" + a + "只，免有" + b + "只")
+			}
+		}
+	</script>
+</html>

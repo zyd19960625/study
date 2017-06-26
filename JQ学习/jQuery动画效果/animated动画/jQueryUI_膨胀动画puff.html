@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUI_膨胀动画puff</title>
+    <style>
+        p {background-color:#bca; width:200px; border:1px solid green;}
+        div{ width:570px; height:270px; }
+    </style>
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         * puff effect可与show/hide/toggle等方法一起使用。这会创建一个puff effect，通过扩展元素的同时隐藏它.
+         * 语法：selector.hide|show|toggle( "puff", {arguments}, speed );
+         *
+           mode − 效果的模式。可以是"show" 或 "hide". 默认是hide.
+           percent − 缩放的百分比. 默认是150.
+         * */
+        $(document).ready(function() {
+
+            $("#hide").click(function(){
+                $(".target").hide( "puff", { }, 2000 );
+            });
+
+            $("#show").click(function(){
+                $(".target").show( "puff", {percent:100}, 2000 );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>单击下面任意一个按钮</p>
+
+<button id = "hide"> 隐藏 </button>
+<button id = "show"> 显示</button>
+
+<div class="target">
+    <img src = "images/slide-1.jpg" alt = "" />
+</div>
+</body>
+</html>

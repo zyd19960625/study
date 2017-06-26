@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUI_Fold动画</title>
+    <style>
+        p {background-color:#bca; width:200px; border:1px solid green;}
+        div{width:570px; height:270px;}
+    </style>
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         * fold effect可与show/hide/toggle等方法一起使用。这会将元素象纸一样折叠。
+         * 语法：selector.hide|show|toggle( "fold", {arguments}, speed );
+         * horizFirst − 是否首先水平折叠。可以是true or false. 默认是false.
+           mode − 效果的模式。可以是"show" 或 "hide". 默认是hide.
+           size − 折叠到的大小. 默认是15.
+         * */
+        $(document).ready(function() {
+
+            $("#hide").click(function(){
+                $(".target").hide( "fold", {horizFirst: true }, 2000 );
+            });
+
+            $("#show").click(function(){
+                $(".target").show( "fold", {horizFirst: true}, 2000 );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>单击下面任意一个按钮</p>
+
+<button id = "hide"> 隐藏 </button>
+<button id = "show"> 显示</button>
+
+<div class="target">
+    <img src = "images/slide-1.jpg" alt = "" />
+</div>
+</body>
+</html>

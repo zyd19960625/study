@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			td{width: 30px;height: 30px;}
+		</style>
+	</head>
+	<body id="bbbb">
+		<input type="text" id="ty1"/>
+		<input type="text" id="ty2"/>
+		<button id="a" onclick="mm()">添加新的表格</button>
+		
+	</body>
+	<script type="text/javascript">
+		function mm () {
+			var cc= document.createElement("table");
+			cc.style.border="1px black solid";
+			var ii=Math.floor(ty1.value);
+			var jj=Math.floor(ty2.value);
+			for (i=0;i<ii;i++) {
+				var tr=document.createElement("tr");
+				for (j=0;j<jj;j++) {
+					var td=document.createElement("td");
+					td.innerHTML=Math.floor(Math.random()*9);
+					tr.appendChild(td);
+					td.style.background=randomColor();
+				}
+				
+				cc.appendChild(tr);
+			}
+//			document.getElementsById("bbbb").appendChild(cc);
+            var bo=document.getElementById("bbbb");
+            bo.appendChild(cc);
+        }
+	</script>
+	<script src="../js/JS通用样式表base.js"></script>
+</html>

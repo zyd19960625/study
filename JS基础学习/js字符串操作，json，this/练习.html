@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#b1{width: 200px;height: 40px;border: 1px black solid;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="b1"/>
+		<input type="button" value="刷新" onclick="b3()" id="b2"/>
+	</body>
+	<script type="text/javascript">
+		var shu=Math.floor(Math.random()*100000+0);
+		document.write(shu+"<br/>");
+		if (shu>=0&&shu<10) {
+			document.write("1位数");
+		} 
+		else if(shu>=10&&shu<100){
+		    document.write("2位数");
+		}
+		else if(shu>=100&&shu<1000){
+		    document.write("3位数");	
+		}
+		else if(shu>=1000&&shu<10000){
+		    document.write("4位数")	
+		}
+		else if(shu>=10000&&shu<100000){
+		    document.write("5位数")	
+		}
+		document.write("<br/>")
+//		var a=Math.floor(shu/10000);
+//		var b=Math.floor(shu%10000/1000);
+//		var c=Math.floor(shu%10000%1000/100);
+//		var d=Math.floor(shu%10000%1000%100/10);
+//		var e=Math.floor(shu%10000%1000%100%10);
+//		document.write("万位"+a+" 千位"+b+" 百位"+c+" 十位"+d+" 个位"+e);
+        var arr=new Array();
+        while(shu){
+        	arr.push(shu%10);
+        	shu=Math.floor(shu/10);
+        }
+        document.write("从低到高");
+        for(var bb=0;bb<arr.length;bb++){
+        	document.write(arr[bb]);
+        }
+        document.write("<br/>")
+		document.write("<br/>")
+		
+		
+		var aaa=new Array(100);
+		for (var aaa1=0;aaa1<100;aaa1++) {
+			aaa[aaa1]=aaa1+1;
+		}
+		for (var bbb in aaa) {
+			if ((aaa[bbb]%3==0)&&(aaa[bbb]%5==0)) {
+				aaa[bbb]="flipflop";
+			}
+			if (aaa[bbb]%3==0) {
+				aaa[bbb]="flip";
+			}
+			if (aaa[bbb]%5==0) {
+				aaa[bbb]="flop";
+			}
+		}
+		document.write(aaa+"<br/>");
+		
+		document.write("<br/>")
+		document.write("<br/>")
+		
+		
+		function b3(){
+		var bbbb=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',0,1,2,3,4,5,6,7,8,9];
+		var b5=parseInt(Math.random()*(bbbb.length-1));
+		var b6=parseInt(Math.random()*(bbbb.length-1));
+		var b7=parseInt(Math.random()*(bbbb.length-1));
+		var b8=parseInt(Math.random()*(bbbb.length-1));
+		b1.value=bbbb[b5]+" "+bbbb[b6]+" "+bbbb[b7]+" "+bbbb[b8]
+		}
+		
+        
+        
+		
+	</script>
+</html>

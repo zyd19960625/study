@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			div{width:200px;height: 100px;margin-left: 100px;margin-top: 10px;}
+		</style>
+	</head>
+	<body>
+		<div id="aa" class="gg">我的:</div>
+		<div class="bb">你的:</div>
+		<div class="bb">他的:</div>
+		<a href="http://www.baidu.com" id="ee" >ddd</a>
+		<p id="ff">ijsalkd</p>
+	</body>
+	<script type="text/javascript">
+		var a=document.getElementsByTagName("div");
+		console.log(a[2].innerHTML);
+		
+		var c=document.getElementById("aa");
+		console.log(c.innerHTML);
+		
+		var d=document.getElementsByClassName("bb");
+		console.log(d[0].innerHTML);
+		
+		var e=document.getElementById("ee");
+		console.log(e.nodeType);
+		
+		var f=e.getAttributeNode("href");
+		console.log(f.nodeType);
+		
+		var g=e.firstChild;
+		console.log(g.nodeType);
+		console.log(g.nodeValue);
+		
+		console.log(ff.nodeName);
+		var  f=document.getElementById("ff").firstChild;
+		console.log(f.nodeValue);
+		
+		var c=document.getElementById("aa");
+		console.log(c.className);
+		console.log(c["className"]);
+		console.log(c.getAttribute("class"));
+		
+		var m=document.getElementsByClassName("bb");
+		m[0].setAttribute("id","mm");
+		console.log(m[0].id);
+		console.log(m[0].offsetWidth);
+		console.log(m[0].offsetHeight);
+		console.log(m[0].offsetTop);
+		console.log(m[0].offsetLeft);
+		
+		var n=document.getElementById("ee");
+		n.setAttribute("class","kk");
+		console.log(n.className);
+		n.removeAttribute("class");
+		console.log(n.className);
+		
+		
+		console.log(c.offsetWidth);
+		console.log(c.offsetHeight);
+		console.log(c.offsetTop);
+		document.write(c.offsetLeft);
+		
+		var newdiv=document.createElement("div");
+		newdiv.innerHTML="新的div";
+		newdiv.style.width="200px";
+		newdiv.style.height="200px";
+		newdiv.style.border="10px black solid";
+		newdiv.style.borderRadius="50%";
+		newdiv.style.background="red";
+		newdiv.style.textAlign="center";
+		newdiv.style.lineHeight="200px";
+		document.body.appendChild(newdiv);
+		document.body.insertBefore(e,document.getElementById("aa"));
+	</script>
+</html>

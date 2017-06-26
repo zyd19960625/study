@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{width: 180px;height: 300px;}
+			#div1{width: 1600px;height: 300px;padding-top: 150px;}
+			input{width: 100px;height: 100px;margin-top: 10px;display: block;float: left;margin-left: 20px;}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="1" id="a"/>
+		<input type="button" value="2" id="b"/>
+		<input type="button" value="3" id="c"/>
+		<input type="button" value="4" id="d"/>
+		<input type="button" value="5" id="e"/>
+		<div id="div1">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var inp=document.getElementsByTagName('input');
+		for (i=0;i<inp.length;i++) {
+			inp[i].onclick=function(){
+				var xhr;
+				if (window.XMLHttpRequest) {
+					var xhr=new XMLHttpRequest;
+				} else{
+					var xhr=new ActiveXObject('Miscrosoft.XMLHTTP');
+				}
+				var JS="js/imgdata"+this.value+".json?t="+new Date().getTime();
+				xhr.open('get',JS,true);
+				xhr.send();
+				xhr.onreadystatechange=function(){
+					if (xhr.readyState==4) {
+						if (xhr.status==200) {
+							var zhi=JSON.parse(xhr.responseText);
+							var DIV=document.getElementById("div1");
+							DIV.innerHTML='';
+							for (j=0;j<zhi.length;j++) {
+								var IMG=document.createElement('img');
+								IMG.src="img/"+zhi[j].url;
+								DIV.appendChild(IMG);
+							}
+						} else{
+							document.write("出错了");
+						}
+					}
+				}
+			}
+		}
+	</script>
+</html>

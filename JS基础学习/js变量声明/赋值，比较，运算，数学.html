@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<!--<label for="e1">请输入你要查询的等级：</label><input type="text" placeholder="输入等级" id="e1"/>-->
+			<input type="button" value="今天星期几" onclick="e2()"/>
+		</form>
+		<p id="e7"></p>
+	</body>
+	<script type="text/javascript">
+		var a1=2;
+        var a2=4;
+        a3=a1+a2;
+        a4=a1-a2;
+        a5=a1*a2;
+        a6=a1/a2;
+        a7=a2%a1;
+		document.write(a3+"<br/>");
+		document.write(a4+"<br/>");
+        document.write(a5+"<br/>");
+		document.write(a6+"<br/>");
+		document.write(a7+"<br/>");
+//		var a8=++a1;
+//		var a9=a2++;
+//		document.write(a1+"<br/>");
+//		document.write(a8+"<br/>");
+//		document.write(a2+"<br/>");
+//		document.write(a9+"<br/>");
+		a8=--a1;
+		a9=a2--;
+		document.write("a1="+a1+"<br/>");
+		document.write("a8="+ --a8+"<br/>");
+		document.write("a2="+a2+"<br/>");
+		document.write("a9="+ --a9+"<br/>");
+		function b1(){
+			var b2=3;
+			var b0=1;
+			b0+=b2;
+			document.write(b0+"<br/>");
+			document.write(b2);
+		}b1();
+		var b3=959;
+		var b4=22;
+		b3-=b4;
+		document.write(b3+"<br/>");
+		
+		
+		var b5=(Math.floor(Math.random()*5+1))
+		var b6=3;
+		b7=b5;
+		
+		document.write(b7+"<br/>");
+		
+		document.write(b7>b6);
+		document.write("<br/>")
+		
+		document.write(b7<b6);
+		document.write("<br/>")
+		
+		document.write(b7>=b6);
+		document.write("<br/>")
+		
+		document.write(b7<=b6);
+		document.write("<br/>")
+		
+		document.write(b7==b6);
+		document.write("<br/>")
+		
+		document.write(b7===b6);
+		document.write("<br/>")
+		
+		var c1=new Date;
+		document.write(c1+"<br/>");
+		
+		document.write(c1.getFullYear()+"<br/>");
+		document.write(c1.getMonth()+"<br/>");
+		document.write(c1.getDate()+"<br/>");
+		document.write(c1.getDay()+"<br/>");
+		document.write(c1.getHours()+"<br/>");
+		document.write(c1.getMinutes()+"<br/>");
+		document.write(c1.getSeconds()+"<br/>");
+	
+		var c2="4456234";
+		var c3=5;
+		document.write(c2>2&&c3<4);
+		document.write("<br/>");
+		
+		document.write(c2>2||c3<4);
+		document.write("<br/>");
+		
+		document.write(!(c2<c3));
+		document.write("<br/>");
+		
+		var c4=/4/gi;
+		document.write(c2.match(c4))
+		document.write("<br/>")
+		
+		var c5="fasa"+"afsdf"
+		document.write(c5)
+		document.write("<br/>")
+		
+		var age=12;
+		age1=age>18?"你成年了":"你未成年";
+		document.write(age1+"<br/>");
+		
+//		var d1=new Date;
+//		var d2=d1.getHours();
+//		var d3=d1.getMinutes();
+//		if (d2<12) 
+//		{
+//		alert("好好上课")
+//		}
+//		else
+//		{
+//		alert("可以吃饭了")
+//		}
+//		if (d3>58)
+//		{
+//			alert("可以吃饭")
+//		}
+//		else
+//		{
+//			alert("吃个毛线")
+//		}
+//		
+//		Element=document.getElementById("e1");
+		function e2(){
+			var e3=new Date();
+			var e4=e3.getDay()
+			var x;
+			switch(e4){
+				case 0:x="今天星期天";
+				break;
+				case 1:x="今天星期一";
+				break;
+				case 2:x="今天星期二";
+				break;
+				case 3:x="今天星期三";
+				break;
+				case 4:x="今天星期四";
+				break;
+				case 5:"今天星期五";
+				break;
+				case 6:x="今天星期六";
+				break;
+				default:x="期待周末";
+				break;
+			}
+			document.getElementById("e7").innerHTML=x;
+			alert(x)
+		};
+		
+		document.write("<br/>");
+		
+	    for (var f0=1;f0<=5;f0++) {
+	    	document.write("这个数字是"+f0+"<br/>");
+	    };
+	    
+	    
+	    var f1="kg";
+	    var f2={
+	    	age:"25岁",
+	    	name:"张三",
+	    	height:"176cm",
+	    	weight:"66kg"
+	    };
+	    for (f1 in f2) {
+	    	document.write(f2.weight+"<br/>")
+	    };
+	    
+	    
+	    var f3=10;
+	    while (f3>=5){
+	    	document.write("打印  "+f3+"<br/>");
+	    	f3--;
+	    };
+	    
+	    document.write("<br/>");
+	    
+	    var f4=1;
+	    do{
+	    	document.write(f4+"<br/>");
+	    	f4++;
+	    }
+	    while(f4<=9);
+	    
+	    document.write("<br/>");
+	    
+	    for (var f5=1;f5<=5;f5++) {
+	    	if (f5==4) {
+	    		break;
+	    	}
+	    	document.write(f5+"<br/>");
+	    }
+	    
+	    document.write("<br/>");
+	    
+	    for (var f5=1;f5<=7;f5++) {
+	    	if (f5==4) {
+	    		continue;
+	    	}
+	    	document.write(f5+"<br/>");
+	    }
+	    document.write("<br/>");
+	    
+	    for (var g0=2;g0<=100;g0=g0+2) {
+	    	document.write(g0+"&nbsp");
+	    }
+	    document.write("<br/>");
+	    document.write("<br/>");
+	    
+	    
+	     for (var g0=0;g0<=100;g0++) {
+	     if(g0%2==0){
+	     	document.write(g0+"&nbsp");
+	       }
+	    }
+	     
+	     document.write("<br/>");
+	     document.write("<br/>");
+	     
+	    for (var g1=1;g1<=100;g1++) {
+	    	document.write(g1+"&nbsp");
+	    	if (g1%10==0) {
+	    		document.write("<br/>");
+	    	}
+	    } 
+	    
+	     document.write("<br/>");
+	     
+	    for (var g2=1;g2<=100;g2++) {
+	    	if (g2%2==0) {
+	    		document.write(g2+"&nbsp");
+	    	}
+	    	if (g2%20==0) {
+	    		document.write("<br/>");
+	    	}
+	    } 
+	    
+	    document.write("<br/>");
+	    
+	    for (var g4=1;g4<=9;g4++) {
+	    	for (var g3=1;g3<=g4;g3++) {
+	    	document.write(g3+"*"+g4+"="+g3*g4+"&nbsp;&nbsp; ");
+	      }
+	    	document.write("<br/>");
+	    	document.write("<br/>");
+	    }
+	    
+	    document.write("<br/>");
+	    
+	    var g6=0;
+	    var g7=0;
+	    for (var g5=1;g5<=100;g5++) {
+	     if(g5%2==1){
+	     	g6+=g5;
+	     } else{
+	     	g7+=g5;
+	     }
+	    }
+	    document.write(g6+"&nbsp;"+g7);
+	    
+	    document.write("<br/>");
+	    document.write("<h3>打印倒正金字塔直线</h3>");
+        for(var i=61;i>0;i-=10){//打印倒金字塔
+           document.write("<hr width=" + i+"%/>"+"<br/>");
+        }
+        
+        document.write("<br/>");
+        
+        for(var j=1;j<70;j=j+10){//打印正金字塔
+           document.write("<hr width=" + j+"%/>"+"<br/>");
+        }
+	    
+	    document.write("<br/>");
+	    document.write("<br/>");
+	    var k=new Array;
+	    k[0]="张三";
+	    k[1]=20;
+	    k[2]="168cm";
+	    for(张三 in k){
+	    	document.write(k[张三]+"-------")
+	    }
+	    
+	    var mmm=1;
+	    var zzz=2
+	    document.write(mmm,zzz)
+	</script>
+</html>

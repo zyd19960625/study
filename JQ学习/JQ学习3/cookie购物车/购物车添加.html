@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        a{
+            text-decoration:none;
+        }
+        .clear{clear:left;overflow:hidden}
+        #shocar{
+            background:#ff0000;
+        }
+        #shocar ul{
+            width:1200px;
+            margin:20px auto;
+
+        }
+        #shocar li{
+            list-style:none;
+            float:left;
+            width:220px;
+            border:1px solid #ccc;
+            margin-right:20px;
+            padding:20px;
+        }
+        #shocar li span{
+            text-align:center;
+            display:block;
+        }
+        #shocar li em{
+            color:#f00;
+            font-size:20px;
+            font-weight:800;
+        }
+        #shocar li p{
+           margin-top:20px;
+           color:#333;
+           font-size:14px;
+        }
+        #shocar li a{
+           display:block;
+           width:120px;
+           border:1px solid #ccc;
+           color:#333;
+           font:14px/32px "";
+           text-align:center;
+            margin:20px auto;
+           cursor:pointer;
+        }
+        #shocar li a:hover{
+            border-color:#f00 ;
+        }
+        #product{
+            background: #eee;
+            width:1200px;
+            margin:20px auto;
+            border-top:3px solid #bbb;
+        }
+        #list{
+            clear:both;
+            overflow:hidden;
+        }
+        #list div{
+            float:left;
+            font:14px/32px "";
+            color:#333;
+            margin-left:20px;
+        }
+        #h1{
+            width:40%;
+        }
+        #h2{
+            width:25%;
+        }
+        #h3{
+            width:25%;
+        }
+        #listProduct img{
+            width:80px;
+        }
+        #carbox{
+            position:absolute;
+            right:20px;
+            top:20px;
+            width:120px;
+            border:2px solid #ccc;
+            text-align:center;
+            height:32px;
+        }
+        #carboxcount{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="shocar">
+        <ul>
+            <li>
+                <span><img src="img/1.jpg" /></span>
+                <em>&yen;3999</em>
+                <p pid="lstvs50">乐视超级电视s50</p>
+                <a>加入购物车</a>
+            </li>
+            <li>
+                <span><img src="img/2.jpg" /></span>
+                <em>&yen;4999</em>
+                <p pid="lstvs60">乐视超级电视s60</p>
+                <a>加入购物车</a>
+            </li>
+            <li>
+                <span><img src="img/3.jpg" /></span>
+                <em>&yen;5999</em>
+                <p pid="lstvs70">乐视超级电视s70</p>
+                <a>加入购物车</a>
+            </li>
+            <li>
+                <span><img src="img/4.jpg" /></span>
+                <em>&yen;6999</em>
+                <p pid="lstvs80">乐视超级电视s80</p>
+                <a>加入购物车</a>
+            </li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <!--  <div id="product">
+        <div id="list">
+            <div id="h1">商品名称</div>
+            <div id="h2">价格</div>
+            <div id="h3">操作</div>
+        </div>
+    <div class="listProduct"></div>
+    </div>-->
+<div id="carbox">
+    <a href="购物车详情.html">
+             购物车数量
+    <span id="carboxcount">0</span>
+    </a>
+</div>
+</body>
+<script src="myCookie.js"></script>
+<script src="jianrong.js"></script>
+<script>
+
+    var shopCar=document.getElementById("shocar");
+    var oUl=shopCar.getElementsByTagName("ul");
+    var arrLi=oUl[0].children;
+
+    var lis=document.getElementById("shocar").children[0].children;//ul-li
+    for(var i=0;i<lis.length;i++){
+        var oA=lis[i].getElementsByTagName("a")[0];
+        oA.onclick=function(){
+        var pname=getPreviousSibling(this).innerHTML;
+        var oPname=getPreviousSibling(this);//获得p节点
+        var ppid=oPname.attributes["pid"].nodeValue;//获取属性节点值
+        var pprice;
+
+        //if-else语句是获取节点的兼容性
+        if(this.previousElementSibling){//
+            pprice=this.previousElementSibling.previousElementSibling.innerHTML;//a前一个节点的前一个节点是价格
+        }else{
+            pprice=this.previousSibling.previousSibling.innerHTML;
+        }
+        var imgsrc;
+        if(this.parentNode.firstElementChild){
+            //a的父亲节点的第一个子节点的第一个子节点是图片
+            //li-span-img
+            imgsrc=this.parentNode.firstElementChild.firstElementChild.src;
+        }else{
+            imgsrc=this.parentNode.firstChild.firstChild.src;
+        }
+        setCarCookie(pname,pprice,imgsrc,ppid);
+            updateCar();
+        }
+    }
+
+    function setCarCookie(name,price,imgsrc,pid){
+	    //一个商品的信息有：图片，名称，价格，数量，id（code）
+	    //用&&拼接五个信息，乐视超级电视 s80&5999&&img/4.jpg&&lstv s80&&1
+	    //购物车的字符串：乐视超级电视 s80&5999&&img/4.jpg&&lstv s80&&1  ||  乐视超级电视 s80&&5999&img/4.jpg&&lstv s80&&1
+	    var sProductInfo=name+"&&"+price+"&&"+imgsrc+"&&"+pid+"&&"+1;
+	    var oldProductInfo=getCookie("carCookie");//获取上一个cookie
+	    if(oldProductInfo.length>0){
+	        //如果有旧数据，添加数据时前面要添加分隔符||
+	        var newProductInfo=oldProductInfo+"||"+sProductInfo;
+	        setCookie("carCookie",newProductInfo,30);
+	    }else{
+	        //无旧数据时，直接存储商品的信息
+	        setCookie("carCookie",sProductInfo,30);
+	    }
+	    //更新购物车数量
+	    // updateCar();
+	}
+
+	//更新购物车数量
+	function updateCar(){
+	    var productsCookie=getCookie("carCookie");
+	    if(productsCookie.length>0){
+	        var arrProducts=productsCookie.split("||");
+	        var oCount=document.getElementById("carboxcount");
+	        oCount.innerHTML=arrProducts.length;
+	        //updateCar();
+	    }
+	}
+	updateCar();
+
+
+</script>
+</html>

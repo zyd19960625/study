@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script src="../JQ基础学习/js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		function  time(){
+		    $('li:eq(0)').appendTo('ul')
+		}
+		setInterval(time,2000)
+	</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    *{margin: 0;padding: 0;}
+			#a{width: 200px;height: 200px;background: aliceblue;}
+			#b{width: 100px;height: 100px;background: darksalmon;}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="显示"/>
+		<input type="button" value="隐藏"/>
+		<input type="button" value="切换隐藏和消失"/>
+		<input type="button" value="逐渐出现"/>
+		<input type="button" value="逐渐隐藏"/>
+		<input type="button" value="切换逐渐隐藏和逐渐消失"/>
+		<input type="button" value="fadeTO"/>
+		<input type="button" value="上卷"/>
+		<input type="button" value="下卷"/>
+		<input type="button" value="切换上卷和下卷"/>
+		<input type="button" value="自定义动画"/>
+		<div id="a">
+			
+		</div>
+		<div id="b">
+			
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+	<script type="text/javascript">
+		$("input:eq(0)").click(function(){
+			$('div').show(500)
+		})
+		$("input:eq(1)").click(function(){
+			$('div').hide(500)
+		})
+		$("input:eq(2)").click(function(){
+			$('div').toggle(500)
+		})
+		$("input:eq(3)").click(function(){
+			$('div').fadeIn(500)
+		})
+		$("input:eq(4)").click(function(){
+			$('div').fadeOut(500)
+		})
+		$("input:eq(5)").click(function(){
+			$('div').fadeToggle(500)
+		})
+		$("input:eq(6)").click(function(){
+			$('div:eq(0)').fadeTo('fast',1)
+		})
+		$("input:eq(7)").click(function(){
+			$('div').slideUp(500)
+		})
+		$("input:eq(8)").click(function(){
+			$('div').slideDown(500)
+		})
+		$("input:eq(9)").click(function(){
+			$('div').slideToggle(500)
+		})
+		$("input:eq(10)").click(function(){
+			$('div').animate({"width":"500px"},500).delay(500).animate({"margin-left":"200px","margin-top":"200px"},500).slideUp(2000).fadeIn(1000).animate({'margin-left':'1000px','margin-top':'800px'},2000).hide(2000)
+		})
+	</script>
+</html>

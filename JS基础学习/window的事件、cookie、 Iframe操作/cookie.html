@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="inp" name="账号"/>
+		<button id="bu1">设置cookie</button>
+		<button id="bu2">获取cookie</button>
+		<button id="bu3">删除cookie</button>
+	</body>
+	<script type="text/javascript">
+		function $(ssss){
+			return document.getElementById(ssss);
+		}
+		var yxsj=10000;
+		$("bu1").onclick=function(){
+			var nowtime=new Date().getTime();
+			var endtime=new Date(nowtime+yxsj)
+			document.cookie=escape($("inp").value)+";expires="+endtime+";=/";
+//			console.log(escape($("inp").value))
+		}
+		$("bu2").onclick=function(){
+			console.log(document.cookie);
+		}
+		$("bu3").onclick=function(){
+			var time1=new Date();
+			time1.setTime(time1.getTime()-1000);
+			document.cookie=";expires="+time1.toGMTString();
+		}
+	</script>
+</html>

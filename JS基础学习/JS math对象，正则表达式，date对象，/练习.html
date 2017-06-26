@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#cc{width: 200px;height: 200px;color: white;background: black;}
+		</style>
+	</head>
+	<body>
+		<div id="cc" onclick="mm()">
+			<span id="sp">5</span>
+		</div>
+		<div id="fff">
+			
+		</div>
+		<button id="nn" onclick="bbb()">停止</button>
+		
+	</body>
+	<script type="text/javascript">
+		var a=4
+		function mm () {
+		    document.getElementById("sp").innerHTML=a;
+		    a--
+		    if (a==-1) {
+		    	clearInterval(time);
+		    	document.getElementById("cc").style.display="none"
+		    }
+		}
+		var time=setInterval(mm,1000);
+
+        function bbb(){
+			var newdate=new Date();
+			var fudate=new Date("2017-12-29 12:59:59");
+			var cha=fudate.getTime()-newdate.getTime();
+			var f=Math.floor(parseInt(cha%1000));
+			fff.innerHTML=f;
+		}
+        bbb();
+//		var name= window.setInterval(bbb,1);
+		
+		
+	</script>
+</html>

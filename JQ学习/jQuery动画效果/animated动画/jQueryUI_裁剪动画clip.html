@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUI_裁剪动画clip</title>
+    <style>
+        p {background-color:#bca; width:200px; border:1px solid green;}
+    </style>
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         * Clip  effect可与show/hide/toggle等方法一起使用。这会将元素滑水平或垂直clip on/off。
+         * 语法：selector.hide|show|toggle( "clip", {arguments}, speed );
+         * direction − 效果的方向. 可以是"vertical"或"horizontal". 默认是vertical.
+           mode − 效果的模式。可以是"show" 或 "hide". 默认是hide.
+         * */
+        $(document).ready(function() {
+
+            $("#hide").click(function(){
+                $(".target").hide( "clip", {direction: "horizontal"}, 3000 );
+            });
+
+            $("#show").click(function(){
+                $(".target").show( "clip", {direction: "vertical"}, 1000 );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>单击下面任意一个按钮</p>
+
+<button id = "hide"> 隐藏 </button>
+<button id = "show"> 显示</button>
+
+<div class="target">
+    <img src = "images/slide-1.jpg" alt = "" />
+</div>
+</body>
+</html>

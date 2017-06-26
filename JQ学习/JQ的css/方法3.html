@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p class="b">Hello1</p>
+		<p class="b">Hello2</p>
+		<p class="b">Hello3</p>
+		<p>Hello4</p>
+		<p>Hello5</p>
+	</body>
+	<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+//		$('p').append('World')
+//		$("<b>你懂得</b>").appendTo('p')
+//		$('p').prepend('Hi')
+//		$("<b>我不懂</b>").prependTo('p')
+//		$('p').empty();
+        $('p').click(function(){
+        	$('p').remove('.b');
+        })
+	</script>
+</html>

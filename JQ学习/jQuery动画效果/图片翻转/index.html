@@ -1,0 +1,157 @@
+﻿<doctype html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>网友czqn8分享jquery实现图片翻牌旋转特效</title>
+		<style>
+			*{margin:0px;padding:0px;}
+			li{list-style:none;}
+			#brand{
+				width:330px;
+				height:400px;
+				border:1px solid #dddddd;
+				box-shadow:0px 0px 5px #dddddd;
+				margin:30px auto;
+			}
+			#brand .title{
+				width:100%;
+				height:35px;
+				line-height:35px;
+				font-size:16px;
+				margin-top:4px;
+				border-bottom:2px solid #33261c;
+				text-align:center;
+				color:#33261c;
+			}
+			#brand .bd-box{
+				width:284px;
+				height:358px;
+				overflow:hidden;
+				padding:0px 24px;
+			}
+			#brand .bd-box li{
+				float:left;
+				width:122px;
+				height:77px;
+				overflow:hidden;
+				position:relative;
+				margin:10px 10px 0px 10px;
+			}
+			#brand .bd-box li img{
+				width:120px;
+				height:75px;
+				border:1px solid #e9e8e8;
+				position:absolute;
+				left:0px;
+				top:0px;
+				z-index:2;
+				overflow:hidden;
+			}
+			#brand .bd-box li span{
+				width:120px;
+				height:0px;
+				border:1px solid #e9e8e8;
+				position:absolute;
+				left:0px;
+				top:38px;
+				z-index:1;
+				text-align:center;
+				line-height:75px;
+				font-size:14px;
+				color:#FFF;
+				background:#ffa340;
+				font-weight:bold;
+				overflow:hidden;
+				display:none;
+			}
+			#brand .bd-box li a{
+				width:120px;
+				height:75px;
+				position:absolute;
+				left:0px;
+				top:0px;
+				z-index:3;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<script>
+			$(function(){
+				var $aLi = $('#brand .bd-box li');
+				
+				$aLi.each(function(){
+					$(this).hover(
+						function(){
+							var $img = $(this).children("img");
+							$img.animate({top:37,height:0},500,function(){
+								$img.hide();
+								$img.next().show().animate({top:0,height:75},500);
+							});
+						},
+						function(){
+							
+						}
+					);
+				});
+			})
+		</script>
+	</head>
+	<body>
+	<center>
+  <span style="font-size:15px; font-weight:bold; text-align:center; line-height:25px; color:#000;">网友czqn8分享jquery实现图片翻牌旋转特效<br />
+     <a href="http://www.jq-school.com" target="_blank" style="color:#000">JquerySchool</a>网站出品（<a href="http://www.jq-school.com" style="color:#000" target="_blank">http://www.jq-school.com</a>）<br />
+	   （<a href="http://bbs.jq-school.com" target="_blank" style="color:#000">Jquery学堂交流社区</a>）	
+	  <br />
+      官方网站学习交流QQ群<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=f221dd676cd5f7f51f6b580ff8fe1bdd2fefe911ae0e1137a6f79c58d6e11ebf"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Jquery学堂QQ⑧群" title="Jquery学堂QQ⑧群"></a><br /><img src="http://www.jq-school.com//attached/image/20130828/20130828131529_8235.jpg" width="200" height="200" title="JquerySchool微信二维码" alt="JquerySchool微信二维码" />
+<br />亲！关注一下呗，转发一下呗，3Q！</span>
+</center>
+		<div id="brand">
+			<div class='title'>
+				热门品牌推荐
+			</div>
+			<ul class='bd-box'>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/1.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/2.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/3.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/4.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/5.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/6.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/7.jpg" />
+					<span>肌龄</span>
+				</li>
+				<li>
+					<a href="http://www.jq-school.com"> </a>
+					<img src="images/8.jpg" />
+					<span>肌龄</span>
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
+
+
