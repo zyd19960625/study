@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px #000 solid;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600"></canvas>
+	</body>
+	<script type="text/javascript">
+		
+		var r=0;
+		var a=1;
+		var x,y;
+		x=parseInt(Math.random()*801);
+		y=parseInt(Math.random()*601);
+		var r,g,b;
+		r1=Math.floor(Math.random()*256);
+		g=Math.floor(Math.random()*256);
+		b=Math.floor(Math.random()*256);
+		function fun(){
+			var canvas=document.getElementById('canvas');
+			var context=canvas.getContext('2d');
+			context.clearRect(0,0,800,600);
+			a=a-0.015;
+			r=r+1;
+			if (r>=100) {
+				r=150;
+			}
+			context.beginPath();
+			context.fillStyle="rgba("+r1+","+g+","+b+","+a+")"
+			context.arc(x,y,r,0,2*Math.PI);
+			context.fill();
+			context.closePath();			
+		}
+		setInterval(fun,50);
+	</script>
+</html>

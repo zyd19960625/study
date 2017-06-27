@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cookie</title>
+	</head>
+	<body>
+		<input type="text" id="txt"/>
+		<button id="btn1">设置cookie</button>
+		<button id="btn2">读取cookie</button>
+		<button id="btn3">删除cookie</button>
+	</body>
+	<script>
+	    var TXT=document.getElementById("txt");
+		var B1=document.getElementById("btn1");
+		var B2=document.getElementById("btn2");
+		var B3=document.getElementById("btn3");
+		var time=24*3600*1000;
+		B1.onclick=function(){
+			var mytxt=TXT.value;
+			var d=new Date().getTime();
+			var endTime=new Date(d+time);
+			document.cookie="abc="+escape(mytxt)+";expires="+endTime+";=/";
+			console.log(document.cookie);
+		}
+		B2.onclick=function(){
+			console.log(unescape(document.cookie));
+		}
+		B3.onclick=function(){
+			var date=new Date();
+			date.setTime(date.getTime()-5000);
+			document.cookie="abc=bbb;expires="+date.toGMTString();
+		}
+	</script>
+</html>

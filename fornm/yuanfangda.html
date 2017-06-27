@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#can{
+				border: 1px black solid;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="can" width="600" height="600"></canvas>
+	</body>
+	<script type="text/javascript">
+		var can=document.getElementById('can');
+		var ctex=can.getContext("2d");
+		
+		var setarr=[];
+		
+		setInterval(function(){
+			var x=Math.floor(Math.random()*600);
+			var y=Math.floor(Math.random()*600);
+			var R=10;
+			var r=Math.floor(Math.random()*256);
+			var g=Math.floor(Math.random()*256);
+			var b=Math.floor(Math.random()*256);
+			var a=1;
+			
+			setarr.push({
+				x:x,
+				y:y,
+				R:R,
+				r:r,
+				g:g,
+				b:b,
+				a:a
+			});
+		},500)
+		
+		setInterval(function(){
+			ctex.clearRect(0,0,600,600);
+			for (i=0;i<setarr.length;i++) {
+				setarr[i].R+=1;
+				setarr[i].a-=0.01;
+				if (setarr[i].a<=0) {
+					setarr.splice(i,1)
+				}
+//				ctex.beginPath();
+//				ctex.fillStyle="rgba("+setarr[i].r+","+setarr[i].g+","+setarr[i].b+","+setarr[i].a+")"
+//				ctex.arc(setarr[i].x,setarr[i].y,setarr[i].R,0,2*Math.PI);
+//				ctex.fill();
+			}
+			for(i=0;i<setarr.length;i++){
+				ctex.beginPath();
+				ctex.fillStyle="rgba("+setarr[i].r+","+setarr[i].g+","+setarr[i].b+","+setarr[i].a+")"
+				ctex.arc(setarr[i].x,setarr[i].y,setarr[i].R,0,2*Math.PI);
+				ctex.fill();
+			}
+			
+		},30)
+		
+		
+	</script>
+</html>
