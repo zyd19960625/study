@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+    <!--<form oninput="add()">-->
+        <!--<input type="range" min="0" max="100" id="m" value="50"/>-->
+        <!--+<input type="number" min="0" max="100" id="n" value="50"/>-->
+        <!--=<output name="x" id="input"></output>-->
+    <!--</form>-->
+
+    <!--<form oninput="x.value=parseInt(m.value)+parseInt(n.value)">-->
+    <!--<input type="range" min="0" max="100" id="m" value="50"/>-->
+    <!--+<input type="number" min="0" max="100" id="n" value="50"/>-->
+    <!--=<output name="x"></output>-->
+    <!--</form>-->
+    <form>
+    <input type="range" min="0" max="100" id="m" value="50" title="50"  onchange="qu()"/>
+    =<output name="x" id="input"></output>
+    </form>
+</body>
+
+<script>
+//    function add(){
+//        var x=document.getElementsByName("x");
+//        x.value=parseInt(m.value)+parseInt(n.value);
+//        input.innerHTML=x.value;
+//    }
+    function qu(){
+        var x=document.getElementsByName("x");
+        x.value=m.value;
+        m.title=x.value;
+        input.innerHTML=x.value;
+    }
+</script>
+</html>

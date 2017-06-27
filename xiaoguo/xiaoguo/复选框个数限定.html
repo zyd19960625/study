@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>限定复选框的可选个数</title>
+<style type="text/css" media="screen">
+	#spa{
+		color: red;
+	}
+</style>
+<script> 
+function checboxNum(name, num) {
+  var checboxs = document.getElementsByName(name);
+  var a = 0;
+  //计算已经选中的个数
+  for (var i = 0; i < checboxs.length; i++) {
+    if (checboxs[i].checked) {
+      a = a + 1;
+
+    }
+  }
+  console.log(a);
+  spa.innerHTML=a;
+  //  已选中个数 与  可选中最大个数比较
+  if (a == num) {
+    for (var i = 0; i < checboxs.length; i++) {
+      if (!checboxs[i].checked) {
+        checboxs[i].disabled = 'disabled';
+      }
+      // 如果相等 把其他遍历  禁选
+    }
+  } else {
+    for (var i = 0; i < checboxs.length; i++)
+      checboxs[i].removeAttribute('disabled');
+  }
+}
+window.onload = function() {
+	var spa=document.getElementById("spa");
+  var box = document.getElementById("box");
+  box.onclick = function() {
+    checboxNum("ck", 3);
+  }
+}
+</script> 
+
+</head> 
+<body > 
+<div id="box"> 
+<label><input type="checkbox" name="ck"/></label>一 
+<label><input type="checkbox" name="ck"/></label>二
+<label><input type="checkbox" name="ck"/></label>三 
+<label><input type="checkbox" name="ck"/></label>四
+<label><input type="checkbox" name="ck"/></label>五
+<p></p> 
+<label><input type="checkbox" name="ck"/></label>六
+<label><input type="checkbox" name="ck"/></label>七 
+<label><input type="checkbox" name="ck"/></label>八
+<label><input type="checkbox" name="ck"/></label>九 
+<label><input type="checkbox" name="ck"/></label>十 
+</div>
+<p><span id="spa">0</span>/10</p>
+</body> 
+</html> 

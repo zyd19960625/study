@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas{border: 1px solid red;border-radius: 10px;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="600">
+
+    </canvas>
+</body>
+<script>
+
+    var canvas=document.getElementById("canvas");
+    var c=canvas.getContext("2d");
+    var m=10;   //蛇长度
+    var n=3;        //蛇身长度
+    var a=b=10;     //蛇的初始坐标
+    var direction=3;   //0左  1上 2右 3下
+    var map=[];  //记录蛇的运行轨迹
+    setInterval(hs,100);
+    function sw(){
+        x=Math.floor(Math.random()*60);
+        y=Math.floor(Math.random()*60);
+        c.fillStyle="red";
+        c.fillRect(x*10,y*10,20,20);
+    }
+    function hs(){
+        switch(direction){
+            case 0:a-=10;break;  //左
+            case 1:b-=10;break; //上
+            case 2:a+=10;break; //右
+            case 3:b+=10;break; //下
+        }
+        if(a>590||b>590||a<0||b<0){
+            alert("你挂了请重新开始游戏！原因：撞墙");
+            location.reload();
+        }
+        for(var i=0;i<map.length;i++){
+        if(parseInt(map[i].a)==a&&parseInt(map[i].b)==b){
+            alert("你挂了请重新开始游戏！原因：撞到自己了");
+            location.reload();
+        }
+        }
+        if(map.length>=n){
+            var c1=map.shift();  //删除数组第一项，并且返回原元素
+            c.clearRect(c1['a'],c1['b'],m,m);
+        }
+        map.push({'a':a,'b':b});
+        c.fillRect(a,b,m,m);
+        if((x*10)==a&&(y*10)==b){
+            n++;
+            sw();
+        }
+    }
+    document.onkeydown= function (e) {
+        var code= e.keyCode-37;   //e:event
+        switch(code){
+            case 0:direction=0;break;  //左
+            case 1:direction=1;break; //上
+            case 2:direction=2;break; //右
+            case 3:direction=3;break; //下
+        }
+    }
+    sw();
+
+
+</script>
+</html>

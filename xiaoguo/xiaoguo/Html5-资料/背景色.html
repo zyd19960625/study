@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>背景色</title>
+    <style>
+        input{width:100px;height:50px;background-color: black;}
+        p{color: #1C69A1;font-size: 50px;}
+
+    </style>
+</head>
+<body id="body">
+
+    <input type="color" id="input0"  onchange="bian()"/>
+    <p>请选背景色</p>
+    <!--<input type="button" value="点击变色" onclick="bian()"/>-->
+
+</body>
+<script>
+    function bian(){
+    	console.log(input0.value)
+        body.style.backgroundColor=input0.value;
+    }
+</script>
+</html>
