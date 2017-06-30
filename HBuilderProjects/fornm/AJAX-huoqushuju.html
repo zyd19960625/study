@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		li{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+
+	</ul>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	$.ajax({
+		type:"get",
+		url:"ajax-huoqushuju.json",
+		async:true,
+		success:function(data){
+			var data=JSON.parse(data);
+			// for (i=0;i<data.list.length;i++) {
+			// 	var AAAA='<li>'
+			// 	+'作者名称:'+data.list[i].zuozhe+'  '+'  '
+			// 	+'发表日期:'+data.list[i].date+'  '+'  '
+			// 	// +'内容详情:'+data.list[i].content+'  '+'  '
+			// 	+'内容介绍:'+data.list[i].title+'  '+'  '
+			// 	+'</li>'
+			// 	$('ul').append(AAAA);
+			// }
+			for (i=0;i<data.list.length;i++) {
+				var AAAA='<li><a href="ajax_huoqushuju.html?type='+i+'">作者名称:'+data.list[i].zuozhe+'  '+'发表日期:'+data.list[i].date+'  '+'内容简介:'+data.list[i].title+'  '+'</a></li>'
+				$('ul').append(AAAA);
+			}
+
+		}
+	})
+})
+	
+</script>
+</html>

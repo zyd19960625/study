@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px #000 solid;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600"></canvas>
+	</body>
+	<script type="text/javascript">
+		
+		function fun(){
+			
+			var canvas=document.getElementById('canvas');
+			var context=canvas.getContext('2d');
+			var x,y,w,h;
+			x=parseInt(Math.random()*1000);
+			y=parseInt(Math.random()*1000);
+			w=parseInt(Math.random()*1000);
+			h=parseInt(Math.random()*1000);
+			var r,g,b;
+			r=Math.floor(Math.random()*256).toString(16);
+			g=Math.floor(Math.random()*256).toString(16);
+			b=Math.floor(Math.random()*256).toString(16);
+			if (x+w>800) {
+				fun();
+			}else if(y+h>600){
+				fun();
+			}else{
+				context.strokeStyle="#"+r+b+g;
+				context.strokeRect(x,y,w,h);
+			}
+		}
+		setInterval(fun,1);
+	</script>
+</html>

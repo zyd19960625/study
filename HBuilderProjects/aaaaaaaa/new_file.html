@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: #EDEFF0;}
+			*{margin: 0;padding: 0;}
+			a{text-decoration: none;color: black;}
+			#a{
+				width:300px;
+				height: 240px;
+				border: 2px lightgrey solid;
+				transition: all .5s;
+				/*overflow: hidden;*/
+			}
+			.b{
+				width: 300px;
+				height: 170px;
+				overflow: hidden;
+				transition: all .5s;
+			}
+			.c{
+				width: 280px;
+				height: 70px;
+				margin: 0 auto;
+			}
+			img{display: block;transition: all .5s;}
+			#a:hover img{
+				transform: scale(1.2);
+				transition: all .5s;
+			}
+			li{
+				list-style: none;
+				width: 280px;
+				height: 70px;
+				transition: all .3s;
+			}
+			span{display: block;color: #B4BBBF;font-size: 12px;}
+			#time{float: left;}
+			#long{float: right;width: 120px;}
+			p{
+				text-align: center;
+				width: 280px;
+				height: 35px;
+				font-size: 14px;
+			}
+			#p1,#p2{
+				line-height: 35px;
+			}
+			#p3{font-size: 12px;}
+			#li2{display: none;}
+		</style>
+	</head>
+	<body>
+		<a href="#">
+			<div id="a">
+				<div class="b"><img src="img/572b0752000142ef06000338-300-170.jpg"/></div>
+				
+				<ul class="c">
+					<li id="li1">
+						<p id="p1">WEB在线文件管理器</p>
+						<p id="p2"><span id="time">更新至2-10</span><span id="long">课程时长3小时0分</span></p>
+					</li>
+					<li id="li2">
+						<p id="p3">通过本课程文件目录函数库的学习，让你掌握文件、目录函数库的应用</p>
+						<p id="p2"><span id="time">2017-03-11</span><span id="long">28402人学习</span></p>
+					</li>
+				</ul>
+			</div>
+		</a>
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		$('#a').mouseover(function(){
+		    $('#li1').css('display','none')
+		    $('#li2').stop().fadeIn(200);
+	    }).mouseout(function(){
+		    $('#li1').stop().slideDown(200);
+		    $('#li2').stop().hide();
+	    })
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax列表</title>
+</head>
+<body>
+	<div>
+		<h1 class="title"></h1>
+		<h4><span class="zuozhe"></span></h4>
+		<p class="date"></p>
+		<p class="content"></p>
+	</div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+<script type="text/javascript">
+$(function () {
+	var url=location.href;
+	var type=url.substr(url.indexOf('=')+1);
+	console.log(type);
+	$.ajax({
+		type:"get",
+		url:"ajax-huoqushuju.json",
+		async:true,
+		dataType:"json",
+		success:function(data){
+			$('.title').html(data.list[type].title),
+			$('.zuozhe').html(data.list[type].zuozhe),
+			$('.date').html(data.list[type].date),
+			$('.content').html(data.list[type].content)
+		}
+	})
+})
+	
+</script>
+</html>

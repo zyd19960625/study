@@ -1,0 +1,326 @@
+*{margin: 0;padding: 0;}
+			
+			/*头部样式*/
+			.container{
+				padding: 0;
+			}
+			.collapse{
+				float: right;
+				margin-top: 0;
+			}
+			.navbar{
+				background: none;
+				border: none;
+			}
+			/*.aaa{
+				height: 0.315rem;
+			}*/
+			.navbar-brand{
+				padding: 0;
+			}
+			.zhuce{
+				color: lightskyblue;
+			}
+			.collapse>.nav>li>a:hover{color: deepskyblue;}
+			.shouye{
+				color: deepskyblue;
+			}
+			
+			
+			/*导航条样式*/
+			.item img{
+				width: 100%;
+			}
+			.navbar-brand img{
+				width: 110px;
+				height: 50px;
+			}
+			.dropdown-menu li{
+				margin-top: 0.05rem;
+			}
+			.navbar-nav > li > a{
+				padding: 0.0945rem;
+			}
+			.iconfont{
+				font-size: 70px;
+			}
+			.thumbnail span{
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				display: inline-block;
+				align-self: center;
+				background: lightgray;
+				text-align: center;
+				line-height: 150px;
+			}
+			.shuoming{
+				margin-top: 0.25rem;
+			}
+			.thumbnail:hover span{
+				background: lightskyblue;
+			}
+			.thumbnail:hover i{
+				color: white;
+			}
+			.tubiaojieshao{
+				border: none;
+				height: 300px;
+				text-align: center;
+			}
+			.biaoqian,.biaoqian1{
+				margin-bottom: 0.1rem;
+				margin-top: 0.1rem;
+				width: 100%;
+			}
+			.biaoqian p{
+				width: 100%;
+				text-align: center;
+			}
+			.biaoqian1 p{
+				color: lightslategray;
+				width: 100%;
+				text-align: center;
+			}
+			.biaoti1{
+				font-size: 0.2rem;
+			}
+			.neirong{
+				font-size: 0.12rem;
+			}
+			.navbar-form{
+				border: none;
+			}
+			.pagination{
+				width: 100%;
+			}
+			.pagination>li>a{
+				padding: 0.06rem 0;
+				text-align: center;
+				width: 16.67%;
+				color: black;
+			}
+			.nav111{
+				text-align: center;
+				margin: 0 auto;
+			}
+			.tupian p{
+				font-size: 0.08rem;
+				color: red;
+			}
+			
+			.chanpinm{
+				text-align: center;
+				margin-top: 0.2rem;
+			}
+			.tupian1 img{
+				width: 100%;
+			}
+			.aaaaa{
+				margin-top: 30px;
+			}
+			.guanyu{
+				text-align: left;
+			}
+			.dadebg{
+				background: #F5F5F5;
+			}
+			.dibu{
+				text-align: center;
+			}
+			.dibu li{
+				list-style: none;
+				
+			}
+			.biaoqian1 .neirong{
+				font-size: 12px;
+			}
+			.aaaaa .media{
+				margin-top: 0.1rem;
+			} 
+			.icon-weibo{
+				margin-left: 10px;
+				font-size: 30px;
+				color: orangered;
+			}
+			.icon-QQ{
+				margin-left: 10px;
+				font-size: 30px;
+				color: lightskyblue;
+			}
+			.icon-weixin{
+				font-size: 30px;
+				color: lightgreen;
+			}
+			.denglu,.zhuce,.form-group{
+				display: inline-block;
+			}
+			.navbar-left{
+				text-align: center;
+			}
+			.navbar-brand{
+				margin-top: 5px;
+			}
+			.navbar{
+				margin-bottom: 0;
+			}
+			.anniu{
+				font: 30px bold;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.navbar-header{
+				height: 50px;
+			}
+			
+			@media  screen and (min-width: 768px) and (max-width: 990px) {
+				.aaaaa{
+					padding: 0;
+				}
+				.tupian h4{
+					font-size: 0.005rem;
+				}
+				.tupian p{
+					font-size: 0.005rem;
+				}
+				.xiangqing{
+					font-size: 0.005rem;
+				}
+				/*.tupian1{
+					height: 2.2rem;
+				}*/
+				.chanpinm{
+					margin-top: 0.5rem;
+				}
+				.biaoqian{
+					margin-top: 0.1rem;
+				}
+				.chanpinm img{
+					width: 1.2rem;
+					height: 1.5rem;
+				}
+				.row{
+					margin: 0;
+					padding: 0;
+				}
+			}
+			.shuoming>ul{
+				list-style: none;
+			}
+			
+			
+			@media  screen and  (max-width: 768px) {
+				.row{
+					margin: 0;
+					padding: 0;
+				}
+				.aaaaa{
+					padding: 0;
+				}
+				.tupian h4{
+					font-size: 0.005rem;
+				}
+				.tupian p{
+					font-size: 0.005rem;
+				}
+				.biaoti1 img{
+					width: 1.2rem;
+					height: 1.5rem;
+				}
+				.aaaaa container{
+					font-size: 0.002rem;
+				}
+				.aaaaa img{
+					width: 1rem;
+					height: 0.7rem;
+				}
+				.xiangqing{
+					font-size: 0.003rem;
+				}
+				.nav,.collapse{
+					width: 100%;
+				}
+				.collapse{
+					position: relative;
+				}
+				.nav li{
+					width: 100%;
+				}
+				.chanpinm{
+					margin-top: 0.5rem;
+				}
+				.navbar-form{
+					margin-top: 14px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+				}
+				.nav{
+					margin-top: 0.9rem;
+				}
+				.thumbnail span{
+					width: 100px;
+					height: 100px;
+					line-height: 100px;
+				}
+				.iconfont{
+					font-size: 50px;
+				}
+				.biaoti1{
+					font-size: 22px;
+				}
+				.neirong{
+					font-size: 16px;
+				}
+				.pagination{
+					width: 100%;
+				}
+				.pagination>li>a{
+					font-size: 12px;
+				}
+				.tupian1{
+					height: 3.8rem;
+				}
+				.biaoqian{
+					margin-top: 0.1rem;
+				}
+				.navbar-brand{
+					margin-top: 0;
+				}
+			}
+			
+			@media  screen and (max-width: 600px) {
+				/*.tupian1{
+					height: 2rem;
+				}*/
+				.xiangqing{
+					font-size: 0.002rem;
+				}
+				.pagination>li>a{
+					font-size: 0.002rem;
+				}
+				.liebiao{
+					padding: 0;
+				}
+				.row{
+					margin: 0;
+					width: 6.4rem;
+				}
+				.icon-weibo{
+					font-size: 30px;
+				}
+				.icon-QQ{
+					font-size: 30px;
+				}
+				.icon-weixin{
+					font-size:30px;
+				}
+			}
+			.navbar-form{
+				margin-top: 12px;
+			}
+			.dropdown-menu{
+				left: -90px;
+			}

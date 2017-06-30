@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="inp1"/>
+		<input type="text" id="inp2"/>
+		<button id="btn">提交</button>
+	</body>
+	<script src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		$('#btn').click(function(){
+			$.ajax({
+				type:"post",
+				url:"http://192.168.100.99:3000/",
+				data:{
+					name:$('#inp1').val(),content:$('#inp2').val()
+				},
+				dataType:"json"
+			});
+		})
+		
+		
+//		var name = 'World!';
+//		(function () {
+//			console.log(typeof(name));
+//		    if (typeof name === 'undefined') {
+//		        var name = 'Jack';
+//		        console.log('Goodbye ' + name);
+//		    } else {
+//		        console.log('Hello ' + name);
+//		    }
+//		})();
+		
+		
+		var name = 'World!';
+		function aa() {
+			console.log(typeof(name));
+		    if (typeof name === 'undefined') {
+		        var name = 'Jack';
+		        console.log('Goodbye ' + name);
+		    } else {
+		        console.log('Hello ' + name);
+		    }
+		}
+		aa();
+	</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{padding: 0;margin: 0;}
+			.A{width: 500px;height: 50px;}
+			.A div{width: 100px;height: 50px;background: blue;float: left;}
+			.B div{width: 500px;height: 500px;display: none;background: red;}
+			.B .b{display: block;}
+		</style>
+	</head>
+	<body>
+		<div class="A">
+			<div>
+				aa
+			</div>
+			<div>
+				bb
+			</div>
+			<div>
+				cc
+			</div>
+			<div>
+				dd
+			</div>
+			<div>
+				ee
+			</div>
+		</div>
+		<div class="B">
+			<div class="b">
+				aaaaaaaa
+			</div>
+			<div>
+				bbbbbbbb
+			</div>
+			<div >
+				cccccccc
+			</div>
+			<div >
+				dddddddd
+			</div>
+			<div >
+				eeeeeeee
+			</div>
+		</div>
+	</body>
+	<script>
+		var AA=document.getElementsByClassName('A')[0].getElementsByTagName('div');
+		var BB=document.getElementsByClassName('B')[0].getElementsByTagName('div');
+		for (i=0;i<AA.length;i++) {
+			AA[i].index=i;
+			AA[i].onmousemove=function(){
+				for (j=0;j<AA.length;j++) {
+					BB[j].className='';
+				}
+				BB[this.index].className='b';
+			}
+		}
+	</script>
+</html>

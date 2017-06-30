@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		input[type=range]{
+			width: 200px;
+			height: 50px;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<body>
+		<form >
+			<input type="text" list="aa" />
+			    <datalist id="aa">
+			     	<option value="javascript">javascript</option>
+			       <option value="html">html</option>
+			      <option value="css">css</option>
+			      <option value="javascript">javascript</option>
+			       <option value="html">html</option>
+			      <option value="css">css</option>
+			      <option value="javascript">javascript</option>
+			       <option value="html">html</option>
+
+			      <option value="css">css</option>
+			    </datalist>
+			<p>
+				文件：<input type="file" multiple/>
+			</p>
+		</form>
+	</body>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.js">
+		
+		
+	</script>
+	<script type="text/javascript">
+		$('body').append('<li>nihao</li>');
+	</script>
+</html>

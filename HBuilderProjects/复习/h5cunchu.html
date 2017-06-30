@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+		<style type="text/css">
+			#tex{
+				resize: none;
+			}
+			p{
+				float: left;
+				border-bottom: 1px black solid;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+			}
+			.inp1{
+				float: left;
+			}
+			span{
+				width: 200px;
+				float: left;
+				margin-left: 300px;
+			}
+			td{
+				text-align: center;
+			}
+			.td_1{
+				width: 20%;
+			}
+			.td_2,.td_3{
+				width: 40%;
+			}
+			.tr{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea rows="5" cols="30" id="tex">
+			
+		</textarea>
+		<input type="hidden" id="mykey" />	
+		<br />
+		<button id="btn" class="btn btn-success">存储</button>
+		<button id="read" class="btn btn-success">读取</button>
+		<button id="change" class="btn btn-success">更改</button>
+		<button id="remove" class="btn btn-success">删除</button>
+		<button id="clear" class="btn btn-success">清空</button>
+		<br />
+		<hr />
+		<div id="cunchu">
+			<!--<table class="table">
+				<tr>
+					<td>序号：</td>
+					<td>key</td>
+					<td>value</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>-->
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn=document.getElementById('btn');
+		var cunchu=document.getElementById('cunchu');
+		var change=document.getElementById('change');
+		var read=document.getElementById('read');
+		var mykey=document.getElementById('mykey');
+		var remove=document.getElementById('remove');
+		var clear=document.getElementById('clear');
+		var tex=document.getElementById('tex');
+		
+		btn.onclick=function(){
+			
+			if (/^\s+$/.test(tex.value)) {
+				alert("不能为空！");
+			}else{
+				var mykey1=mykey.value;
+				if (mykey1=="") {
+					var time=new Date();
+					var year=time.getFullYear();//年
+					var month=time.getMonth()+1;//月
+					var date=time.getDate();//日
+					var day=time.getDay();//星期
+					var hour=time.getHours();//时
+					var minute=time.getMinutes();//分
+					var second=time.getSeconds();//秒
+					var min=time.getMilliseconds();
+					mykey1=year+"年"+month+"月"+date+"日"+hour+"点"+minute+"分"+second+"秒"+min+"毫秒";
+				}
+				localStorage.setItem(mykey1,tex.value);
+				myread();
+				tex.value="";
+				mykey.value="";
+			}
+		}
+		read.onclick=myread;
+		function myread(){
+			var datas='<table class="table"><tr class="tr"><td>序号：</td><td>key</td><td>value</td></tr>';
+			for (i=0;i<localStorage.length;i++) {
+				var keys=localStorage.key(i);
+				var val=localStorage.getItem(keys);
+				datas+='<tr><td class="td_1"><input type="radio" name="inp1"/>'+(i+1)+'、'+'</td><td class="td_2">'+keys+'</td><td class="td_3">'+val+'</td></tr>';
+			}
+			cunchu.innerHTML=datas+'</table>';
+				
+		}
+
+		remove.onclick=function(){
+			for (i=0;i<localStorage.length;i++) {
+				var inp1=document.getElementsByName('inp1')[i];
+				if (inp1.checked==true) {
+					localStorage.removeItem(localStorage.key(i));
+				}
+			}
+			myread();
+		}
+		
+		change.onclick=function(){
+			for (i=0;i<localStorage.length;i++) {
+				var inp1=document.getElementsByName('inp1')[i];
+				if (inp1.checked==true) {
+					var keys=localStorage.key(i);
+					tex.value=localStorage.getItem(keys);
+					mykey.value=keys;
+				}
+			}
+		}
+		
+		clear.onclick=function(){
+			localStorage.clear();
+			myread();
+		}
+	</script>
+</html>

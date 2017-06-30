@@ -1,0 +1,30 @@
+百度地图 官网
+
+API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，
+目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访
+问源码，或理解内部工作机制的细节。
+
+web开发
+示例Demo  地图展示  
+
+首先获取秘钥 （注意权限） 
+
+具体地址：
+示例Demo    逆/地址解析
+
+ var marker = new BMap.Marker(point);  // 创建标注
+ map.addOverlay(marker);               // 将标注添加到地图中
+ marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+
+使用百度地图精准定位经纬度坐标的方法：
+1.打开百度地图“坐标拾取系统”：输入网址”http://api.map.baidu.com/lbsapi/getpoint/index.html“，
+进入”坐标拾取系统“；
+进入”坐标拾取系统“后，就可以方便的查询自己的精准地理信息了，我们以”上海腾讯大厦“为例，寻找它的详细坐标。
+在搜索栏输入“海尔工业园”点击搜索，就会在地图上出现相应的标记，点击你要找的某一个，就能看到相应的坐标。
+
+
+
+
+
+

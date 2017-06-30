@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="aa" onclick="changestyle('red')">nihao</h1>
+		<h2 id="bb">wode</h2>
+	</body>
+	<script type="text/javascript">
+		//1.通过new 关键词
+		/*var obj=new Object();
+		obj.name="tom";
+		obj.sex="男";
+		obj.func=function(){
+			console.log(this.name);
+		}
+		obj.func();
+		//this指向， 谁调用方法指向谁
+		
+		
+		
+		//2.对象字面量 或者  对像直接量
+		/*var obj1={
+			name:"tom",
+			age:20,
+			func:function(){
+				alert(this.name)
+			}
+		}
+		obj1.func();
+		
+		
+		
+		//3.通过构造函数创建对象  构造函数 函数名首字母大写   new构造函数
+		/*function Person(name,sex){
+			this.name=name;
+			this.sex=sex;//前面一个表示属性  后一个表示值对应上面括号里的
+			this.func=function(){
+				alert(this.name);
+			}
+		}
+		var person1=new Person("zhangsan","男");
+		person1.func();
+		var person2=new Person("lisi","男");
+		person2.func();*/
+		
+		
+		//在构造函数里，this 指向通过构造函数新创建的对象
+		
+		
+		
+		//4.工厂模式
+		function person(name,sex){
+			var obj=new Object();
+			obj.mingzi=name;
+			obj.sex=sex;
+			obj.func=function(){
+				console.log(this.name);
+				console.log(this.sex);
+			}
+			return obj;
+		}
+		var person1=person("张山","男");
+		var person2=person("李四","男");
+		person1.func();
+		console.log(person1.mingzi);
+		
+		
+//		function person(name,sex,age){
+//			var obj=new Object();
+//			obj.func=function(){
+//				console.log(name);
+//				console.log(sex);
+//				console.log(age);
+//			}
+//			return obj;
+//		}
+//		var person1=person("张山","男","33");
+//		console.log(name);
+//		var person2=person("李四","男","44");
+//		person1.func();
+		
+		
+		//5.构造函数 + 原型
+		
+		
+		/*function Person(name,sex){
+			this.name=name;
+			this.sex=sex;//前面一个表示属性  后一个表示值对应上面括号里的
+		}
+		Person.prototype.func=function(){
+			alert(this.name);
+		}
+		*/
+		
+		//this    直接写this  指向window对象
+		//call()    apply()   改变this对象
+		
+		
+//		var aa=document.getElementById('aa');
+//		var bb=document.getElementById('bb');
+//		function changestyle(type,value){
+//			this.style[type]=value;
+//			console.log(arguments);
+			//arguments   检测当前函数的参数  length 参数长度    callee  返回函数体
+//		}
+		//changestyle.call(aa,"color","red")
+		//call()  一个到多个的参数，第一个为this的指向   后面依次为方法的参数
+		
+//		changestyle.apply(bb,["color","red"])
+		//apply()  一个到两个参数，第一个为this的指向   如果方法有参数  那么以数组的方式传入
+	</script>
+</html>

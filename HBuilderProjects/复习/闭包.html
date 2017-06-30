@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闭包</title>
+	</head>
+	<body>
+	</body>
+	<script>
+/*		闭包的作用  局部变量可以被全局调用
+		   闭包是一个函数，特点：1.函数嵌套   2.return 返回
+		   
+		变量作用域：  局部变量（函数调用结束后就被销毁）  全局变量
+		*1.函数外部 有无var都是全局变量
+		*2.函数内部 有var为局部，无var为全局
+*/	
+        for(var i=0;i<6;i++){    //for循环流程:判断>执行>++>判断...结束
+        	console.log(i);     //输出结果0 1 2 3 4 5
+        }
+        
+        for(var i=0;i<6;i++){           //for循环瞬间完成，比定时器走得快，定时器触发时，for已完成，i变为6
+        	setTimeout(function(){      //输出6次    结果为6
+        		console.log(i);
+        	},1000)
+        }
+       
+        
+//		
+		 for(var i=0;i<6;i++){          //for循环瞬间完成，比定时器走得快，定时器触发时，for已完成，i变为6
+        	setTimeout(function(){      //输出结果为6  次数延时
+        		console.log(i);
+        	},1000*i);
+        }
+	</script>
+</html>

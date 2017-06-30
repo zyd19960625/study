@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+        .div1{
+            height:100px;
+            width:400px;
+            border: 2px solid blue;
+            overflow: hidden;
+        }
+        img{
+            margin-left:5px;
+        }
+    </style>
+    <script>
+
+//        var i =0;
+//        function aaa(){
+//            div1.scrollLeft++;
+//            if(div1.scrollLeft>=700){
+//                div1.scrollLeft=0;
+//            }
+//        }
+//        var jishi=setInterval(aaa,10);
+//        window.onload = function(){
+//            div1.onmouseover = function(){
+//                clearInterval(jishi);
+//            }
+//            div1.onmouseout = function(){
+//                jishi = setInterval(aaa,10);
+//            }
+//        }
+
+        function jishi(){
+            div1.scrollLeft++;
+            if(div1.scrollLeft>=div1.scrollWidth/2+25){
+                div1.scrollLeft=0;
+            }
+        }
+        window.onload= function () {
+            var imgArr=div2.getElementsByTagName("img");
+            div2.style.width=img1.offsetWidth*imgArr.length+"px";
+            div1.onmouseover=function(){
+                clearInterval(gundong);
+            }
+            div1.onmouseout=function(){
+                gundong=setInterval(jishi,10);
+            }
+        }
+        var gundong=setInterval(jishi,10)
+
+
+        function xiangyou(){
+            clearInterval(gundong);
+            gundong=setInterval(you,10);
+            div1.onmouseover= function () {
+                clearInterval(gundong);
+            }
+            div1.onmouseout= function () {
+                gundong=setInterval(you,10);
+            }
+        }
+        function you(){
+            div1.scrollLeft--;
+            if(div1.scrollLeft==0){
+                div1.scrollLeft=parseInt(div2.scrollWidth)/2+25;
+            }
+        }
+
+        function xiangzuo(){
+            clearInterval(gundong);
+            gundong=setInterval(jishi,10);
+            div1.onmouseout= function () {
+                gundong=setInterval(jishi,10);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" class="div1">
+        <div id="div2" class="div2">
+            
+        </div>
+    </div>
+    <input type="button" value="向左" onclick="xiangzuo()" />
+    <input type="button" value="向右" onclick="xiangyou()"/>
+</body>
+</html>
