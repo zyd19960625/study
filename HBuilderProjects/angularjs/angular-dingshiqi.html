@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#aa{
+				width: 400px;
+				height: 300px;
+				margin: 100px auto;
+				position: relative;
+			}
+			img{
+				width: 400px;
+				height: 300px;
+				
+			}
+			span{
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				display: block;
+				background: orange;
+				color: white;
+				font-size: 25px;
+				font-weight: bold;
+				line-height: 30px;
+				text-align: center;
+				position: absolute;
+			}
+			.sp1,.sp2{
+				top: 135px;
+			}
+			.sp1{
+				left: 20px;
+			}
+			.sp2{
+				right: 20px;
+			}
+			.sp1:hover{
+				cursor: pointer;
+			}
+			.sp2:hover{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aa" ng-controller="Mc1" ng-mouseover="over()" ng-mouseout="out()">
+			<img ng-src="img/{{mun}}.jpg"/>
+			<span class="sp1" ng-click="prev()"><</span>
+			<span class="sp2" ng-click="next()">></span>
+		</div>
+	</body>
+	<script src="../angular-js/js/angular.js"></script>
+	<script type="text/javascript">
+		angular.module("app",["ng"]).controller("Mc1",function($scope,$interval){
+			$scope.mun=1;
+			$scope.fun=function(){
+				$scope.mun++;
+				if ($scope.mun>5) {
+					$scope.mun=1;
+				}
+			}
+			var time=$interval($scope.fun,1000)
+			$scope.prev=function(){
+				$scope.mun-=1;
+				if ($scope.mun<1) {
+					$scope.mun=5;
+				}
+			}
+			$scope.next=function(){
+				$scope.mun+=1;
+				if ($scope.mun>5) {
+					$scope.mun=1;
+				}
+			}
+			$scope.over=function(){
+				$interval.cancel(time);
+			}
+			$scope.out=function(){
+				time=$interval($scope.fun,1000)
+			}
+		})
+	</script>
+</html>

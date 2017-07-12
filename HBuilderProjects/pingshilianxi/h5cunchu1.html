@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+		<style type="text/css">
+			#tex{
+				resize: none;
+			}
+			tr{
+				text-align: center;
+			}
+			.td_1{
+				width: 20%;
+			}
+			.td_2{
+				width: 40%;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea rows="5" cols="30" id="tex"></textarea>
+		<br />
+		<button class="btn btn-success" id="save">存储</button>
+		<button class="btn btn-success" id="change">修改</button>
+		<button class="btn btn-success" id="read">读取</button>
+		<button class="btn btn-success" id="remove">删除</button>
+		<button class="btn btn-success" id="clear">清空</button>
+		<input type="hidden" id="yincang" />
+		<div id="data">
+			<!--<table class="table">
+				<tr>
+					<td class="td_1"><input type="radio" name="rad"/></td>
+					<td class="td_2">key</td>
+					<td class="td_2">value</td>
+				</tr>
+			</table>-->
+		</div>
+	</body>
+	<script type="text/javascript">
+		var tex=document.getElementById('tex');
+		var save=document.getElementById('save');
+		var change=document.getElementById('change');
+		var read=document.getElementById('read');
+		var remove=document.getElementById('remove');
+		var clear=document.getElementById('clear');
+		var data=document.getElementById('data');
+		var yincang=document.getElementById('yincang');
+		var rad=document.getElementsByName('rad');
+		save.onclick=function(){
+			
+			if(tex.value==""){
+				alert("请输入文字");
+			}
+			else{
+				if (yincang.value=="") {
+					var time=new Date().getTime();
+					localStorage.setItem(time,tex.value);
+				}else{
+					localStorage.setItem(yincang.value,tex.value);
+				}
+				tex.value="";
+				fun();
+			}
+		}
+		
+		read.onclick=fun;
+		function fun(){
+			var tab="<table class='table'>";
+			for (i=0;i<localStorage.length;i++) {
+				var val=localStorage.getItem(localStorage.key(i));
+				tab+='<tr><td class="td_1"><input type="radio" name="rad"/></td><td class="td_2">'+localStorage.key(i)+'</td><td class="td_2">'+val+'</td></tr>'
+			}
+			data.innerHTML=tab+"</table>";
+		}
+		
+		change.onclick=function(){
+			for (i=0;i<localStorage.length;i++) {
+				if (rad[i].checked) {
+					tex.value=localStorage.getItem(localStorage.key(i));
+					yincang.value=localStorage.key(i);
+					
+				}
+			}
+		}
+		
+		
+		remove.onclick=function(){
+			for (i=0;i<localStorage.length;i++) {
+				if (rad[i].checked) {
+					localStorage.removeItem(localStorage.key(i));
+					fun();
+				}
+			}
+		}
+		
+		clear.onclick=function(){
+			localStorage.clear();
+			data.innerHTML="";
+		}
+	</script>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+		<style type="text/css">
+			body{
+				overflow: hidden;
+			}
+			.page{
+				transition: 3s all linear;
+				/*animation: leave 2s linear ;*/
+				position: absolute;
+				width: 100%;
+				
+			}
+			/*@keyframes leave{
+				0%{
+					left: 50%;
+					transform: rotateY(0deg);
+				}
+				100%{
+					left: -50%;
+					transform: rotateY(720deg);
+				}
+				
+			}*/
+			/*@keyframes leave-actice{
+				0%{
+					left: 0;
+					transform: rotateY(0deg);
+				}
+				100%{
+					left: -100%;
+					transform: rotateY(720deg);
+				}
+				
+			}
+			@keyframes leave{
+				0%{
+					left: 0;
+					transform: rotateY(0deg);
+				}
+				100%{
+					left: -100%;
+					transform: rotateY(720deg);
+				}
+				
+			}
+			@keyframes leave{
+				0%{
+					left: 0;
+					transform: rotateY(0deg);
+				}
+				100%{
+					left: -100%;
+					transform: rotateY(720deg);
+				}
+				
+			}*/
+			.page.ng-leave{
+				opacity: 1;
+				/*top: 0;*/
+				/*animation: leave 2s linear infinite;*/
+				transform:  translate(0%,50%) ;
+			}
+			.page.ng-leave.ng-leave-active{
+				opacity: 0;
+				/*top: 100%;*/
+				/*animation: leave-active 2s linear infinite;*/
+				transform: translate(100%,0%)  ;
+			}
+			.page.ng-enter{
+				opacity: 0;
+				/*left: -100%;*/
+				/*animation: enter 2s linear infinite;*/
+				transform:  translate(-100%,-50%);
+			}
+			.page.ng-enter.ng-enter-active{
+				opacity: 1;
+				/*left: 0;*/
+				/*animation: enter-active 2s linear infinite;*/
+				transform:  translate(0,0);
+			}
+		</style>
+	</head>
+	<body>
+		<!--<a href="#weixin" class="btn btn-success">weixin</a>
+		<a href="#tongxunlu" class="btn btn-success">tongxunlu</a>
+		<a href="#faxian" class="btn btn-success">faxian</a>
+		<a href="#wo" class="btn btn-success">wo</a>-->
+		
+		<div ng-controller="Mc2">
+			<button class="btn btn-success" ng-click="jump1()">weixin</button>
+			<button class="btn btn-success" ng-click="jump2()">tongxunlu</button>
+			<button class="btn btn-success" ng-click="jump3()">faxian</button>
+			<button class="btn btn-success" ng-click="jump4()">wo</button>	
+			<button class="btn btn-success" ng-click="jump5()">wo</button>	
+		</div>
+		<div ng-view class="page"></div>
+	</body>
+	
+	<script src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
+	<script src="../angular-js/js/angular-animate.js"></script>
+	<script type="text/javascript">
+		angular.module("app",["ng","ngRoute","ngAnimate"]).config(function($routeProvider){
+			$routeProvider.when("/weixin",{
+				templateUrl:"temp/weixin.html",
+			}).when("/tongxunlu",{
+				templateUrl:"temp/tongxunlu.html",
+				controller:"Mc1"
+			}).when("/faxian",{
+				templateUrl:"temp/faxian.html"
+			}).when("/wo",{
+				templateUrl:"temp/wo.html"
+			})
+			
+		}).controller("Mc2",function($scope,$location){
+			$location.path("/tongxunlu")
+			
+			$scope.jump1=function(){
+				$location.path("/weixin")
+			}
+			
+			$scope.jump2=function(){
+				$location.path("/tongxunlu")
+			}
+			
+			$scope.jump3=function(){
+				$location.path("/faxian")
+			}
+			
+			$scope.jump4=function(){
+				$location.path("/wo")
+			}
+			
+		}).controller("Mc1",function($http,$scope){
+//			$http({
+//				method:"GET",
+//				url:"../fornm/ajax-huoqushuju.json"
+//			}).then(function(response){
+//				$scope.lists=response.data.list;
+//			})
+			
+			$http.get('../fornm/ajax-huoqushuju.json').then(function(response){
+				var shuju=response.data.list;
+				var len=shuju.length;
+				
+//				var chu=shuju.splice(0,5);
+//				$scope.arr=chu;
+//				$scope.jiazai=function(){
+//					var tr=document.getElementsByClassName("tr1");
+//					var jia=shuju.splice(0,4);
+//					if (tr.length==len-4) {
+//						$scope.hide=true;
+//					}
+//					$scope.arr=$scope.arr.concat(jia);
+//				}
+				
+				$scope.arr=[];
+				for(var i=0;i<5;i++){
+					$scope.arr.push(shuju[i])
+				}
+				
+				var a=5;
+				$scope.jiazai=function(){
+					for(var i=0;i<4;i++){
+						$scope.arr.push(shuju[i+a])
+					}
+					a+=4;
+					if ($scope.arr.length==len) {
+						$scope.hide=true;
+					}
+				}
+			})
+		})
+	</script>
+</html>

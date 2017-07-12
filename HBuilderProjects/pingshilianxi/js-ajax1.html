@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul">
+			
+		</ul>
+	</body>
+	<script type="text/javascript">
+		if(window.XMLHttpRequest){
+			var xhr=new XMLHttpRequest;
+		}else{
+			var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhr.open("GET","../fornm/ajax-huoqushuju.json",true);
+		xhr.send();
+		xhr.onreadystatechange=function(){
+			if (xhr.readyState==4) {
+				if (xhr.status==200) {
+					var tex=JSON.parse(xhr.responseText);
+					console.log(tex.list[1]);
+					var ul=document.getElementById('ul');
+					for (i=0;i<tex.list.length;i++) {
+						ul.innerHTML+="<li><a href='jq-ajax2.html?type="+i+"'>"+tex.list[i].title+"</a></li>";
+					}
+				}	
+			}
+		}
+	</script>
+</html>

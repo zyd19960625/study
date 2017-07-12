@@ -25,7 +25,10 @@
 			.shouye{
 				color: deepskyblue;
 			}
-			
+			.lubbo{
+				padding: 0;
+				margin: 0;
+			}
 			
 			/*导航条样式*/
 			.item img{
@@ -65,7 +68,7 @@
 			}
 			.tubiaojieshao{
 				border: none;
-				height: 300px;
+				height: 270px;
 				text-align: center;
 			}
 			.biaoqian,.biaoqian1{
@@ -92,7 +95,7 @@
 				border: none;
 			}
 			.pagination{
-				width: 100%;
+				width: 88%;
 			}
 			.pagination>li>a{
 				padding: 0.06rem 0;
@@ -173,8 +176,14 @@
 			.navbar-header{
 				height: 50px;
 			}
+			.caption h3{
+				font-size: 22px;
+			}
 			
 			@media  screen and (min-width: 768px) and (max-width: 990px) {
+				.tubiaojieshao{
+					height: 270px;
+				}
 				.aaaaa{
 					padding: 0;
 				}
@@ -211,6 +220,9 @@
 			
 			
 			@media  screen and  (max-width: 768px) {
+				.tubiaojieshao{
+					height: 230px;
+				}
 				.row{
 					margin: 0;
 					padding: 0;
@@ -229,7 +241,7 @@
 					height: 1.5rem;
 				}
 				.aaaaa container{
-					font-size: 0.002rem;
+					font-size: 0.0025rem;
 				}
 				.aaaaa img{
 					width: 1rem;
@@ -275,7 +287,7 @@
 					font-size: 16px;
 				}
 				.pagination{
-					width: 100%;
+					width: 84%;
 				}
 				.pagination>li>a{
 					font-size: 12px;
@@ -292,9 +304,12 @@
 			}
 			
 			@media  screen and (max-width: 600px) {
-				/*.tupian1{
-					height: 2rem;
-				}*/
+				.tubiaojieshao{
+					height: 270px;
+					overflow: hidden;
+					white-space: wrap;
+					text-overflow: ellipsis;
+				}
 				.xiangqing{
 					font-size: 0.002rem;
 				}
@@ -306,7 +321,7 @@
 				}
 				.row{
 					margin: 0;
-					width: 6.4rem;
+					width: 6rem;
 				}
 				.icon-weibo{
 					font-size: 30px;
@@ -323,4 +338,7 @@
 			}
 			.dropdown-menu{
 				left: -90px;
+			}
+			.container-fluid > .navbar-collapse{
+				margin: 0;
 			}

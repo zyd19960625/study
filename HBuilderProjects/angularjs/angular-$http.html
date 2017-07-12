@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+		<style type="text/css">
+			th{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body  ng-controller="Mc1">
+		<table class="table table-bordered">
+			<tr>
+				<th>作者</th>
+				<th>日期</th>
+				<th>标题</th>
+				<th>内容</th>
+			</tr>
+			<tr class="tr1" ng-repeat="list in arr">
+				<td>{{list.zuozhe}}</td>
+				<td>{{list.date}}</td>
+				<td>{{list.title}}</td>
+				<td>{{list.content}}</td>
+			</tr>
+		</table>
+		<h2 ng-click="jiazai()" ng-hide="hide" class="btn btn-success btn-block">加载更多</h2>
+		<h2  ng-show="hide" class="btn btn-warning btn-block">没有更多了</h2>
+	</body>
+	<script src="../angular-js/js/angular.js"></script>
+	<script type="text/javascript">
+		angular.module("app",["ng"]).controller("Mc1",function($http,$scope){
+//			$http({
+//				method:"GET",
+//				url:"../fornm/ajax-huoqushuju.json"
+//			}).then(function(response){
+//				$scope.lists=response.data.list;
+//			})
+			
+			$http.get('../fornm/ajax-huoqushuju.json').then(function(response){
+				var shuju=response.data.list;
+				var len=shuju.length;
+				
+//				var chu=shuju.splice(0,5);
+//				$scope.arr=chu;
+//				$scope.jiazai=function(){
+//					var tr=document.getElementsByClassName("tr1");
+//					var jia=shuju.splice(0,4);
+//					if (tr.length==len-4) {
+//						$scope.hide=true;
+//					}
+//					$scope.arr=$scope.arr.concat(jia);
+//				}
+				
+				$scope.arr=[];
+				for(var i=0;i<5;i++){
+					$scope.arr.push(shuju[i])
+				}
+				
+				var a=5;
+				$scope.jiazai=function(){
+					for(var i=0;i<4;i++){
+						$scope.arr.push(shuju[i+a])
+					}
+					a+=4;
+					if ($scope.arr.length==len) {
+						$scope.hide=true;
+					}
+				}
+			})
+		})
+	</script>
+</html>

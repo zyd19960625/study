@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	</head>
+	<body>
+		<div class="container" ng-controller="Mc1">
+			<h1>{{name}}</h1>
+		</div>
+		<div class="container" ng-controller="Mc2">
+			<input type="number" ng-model="dan"/>
+			<input type="number" ng-model="zong"/>
+			<span>{{dan*zong}}</span>
+			
+			<input type="checkbox" ng-model="kuang" ng-click="dian()"/>
+			<input type="submit" value="提交注册信息" ng-disabled="dis" /><br />
+			
+			<button class="btn btn-success" ng-mouseover="dianji()">点击计数</button>
+			<span>次数：{{num}}</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		
+		angular.module("app",["ng"]).controller("Mc1",function($rootScope){
+			$rootScope.name="One";
+		}).controller("Mc2",function($scope){
+			$scope.dan=0;
+			$scope.zong=0;
+			
+			$scope.kuang=false;
+			$scope.dis=true;
+			$scope.dian=function(){
+				var kuang=$scope.kuang;
+				if (kuang==true) {
+					$scope.dis=false;
+				}else{
+					$scope.dis=true;
+				}
+			}
+			
+			$scope.num=0;
+			$scope.dianji=function(){
+				$scope.num++;
+			}
+		})
+	</script>
+</html>

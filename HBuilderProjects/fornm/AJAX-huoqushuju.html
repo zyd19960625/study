@@ -20,9 +20,10 @@ $(function () {
 	$.ajax({
 		type:"get",
 		url:"ajax-huoqushuju.json",
+		dataType:"json",
 		async:true,
 		success:function(data){
-			var data=JSON.parse(data);
+			
 			// for (i=0;i<data.list.length;i++) {
 			// 	var AAAA='<li>'
 			// 	+'作者名称:'+data.list[i].zuozhe+'  '+'  '

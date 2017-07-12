@@ -1,0 +1,84 @@
+<style type="text/css">
+	.caipin-hhh p{
+		margin-bottom: 0.16rem;
+	}
+	.caipin-hhh{
+	width: 20%;
+	text-align: center;
+	background: #f4f4f4;
+	position: fixed;
+	bottom: 1.2rem;
+	left: 20%;
+	font-size: 0.25rem;
+	color: lightslategray;
+	/*display: none;*/
+	}
+	.caipin-mmm{
+		height: 1rem;
+		list-style: none;
+		position: fixed;
+		width: 20%;
+		left: 20%;
+		bottom: 0;
+		z-index: 11;
+		font-size: 0.25rem;
+	}
+</style>
+
+<div ng-controller="Mc1">
+		<!--头部开始-->
+		<header>
+			<div>
+				<span class="header-left"><i class="iconfont icon-shousuo"></i></span>
+				<input type="text" class="header-inp" placeholder="寻找菜品、店面" />
+				<span class="header-right"><i class="iconfont icon-shousuohou "></i></span>
+			</div>
+		</header>
+		
+		<!--导航条-->
+		<nav>
+			<ul class="navtab">
+				<li ng-click="all()" class="navtab1">全部</li>
+				<li ng-click="tese()">特色菜</li>
+				<li ng-click="tuijian()">店长推荐</li>
+				<li ng-click="jingpin()">精品上市</li>
+			</ul>
+		</nav>
+		
+		<!--内容-->
+		<div >
+			<div class="content" ng-repeat="i in arr">
+				<h2>{{i.id}}</h2>
+				<div class="fish">
+					<a href="#contentxq?mid={{i.id}}&mprice={{i.price}}&mVIP={{i.VIP}}&mtime={{i.time}}&mjifen={{i.jifen}}&mtedian={{i.tedian}}&mimag={{i.imag}}"><img ng-src="img/{{i.imag}}.jpg" /></a>
+					<div class="discripe">
+						<p><span>单价：{{i.price}}</span></p>
+						<p><span>VIP：{{i.VIP}}</span></p>
+						<p><span>制作时间：{{i.time}}</span></p>
+						<p><span>可获积分：{{i.jifen}}</span></p>
+						<p><span>特点：{{i.tedian}}</span></p>
+						<button>点菜</button>
+					</div>
+				</div>
+				<ul class="changecolor" >
+					<li class="ck"><i class="iconfont icon-dianzan"></i> <span>赞 <span class="liang">215</span></span></li>
+					<li><i class="iconfont icon-pinglun"></i> <span>评论 <span class="liang">15</span></span></li>
+					<li><i class="iconfont icon-zhuanfa"></i> <span>转发 </span></li>
+				</ul>
+			</div>
+			<div class="qiehuan">
+				<button ng-click="prev()" ng-hide="hid1">上一页</button>
+				<button ng-click="next()" ng-hide="hid2">下一页</button>
+			</div>
+		</div>
+
+<li class="caipin-mmm">
+			<div class="caipin-hhh">
+				<p ng-click="huoguo()">火锅</p>
+				<p ng-click="difangcai()">地方菜</p>
+				<p ng-click="xican()">西餐</p>
+				<p ng-click="kuaican()">快餐</p>
+			</div>
+		</li>
+		
+</div>

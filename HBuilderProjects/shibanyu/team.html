@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/caipin1.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			.jieshao2{
+				width: 94%;
+				margin: 0.3rem auto 1.3rem;
+			}
+			.jieshao2 h3{
+				margin-top: 0.2rem;
+				color: lightslategray;
+				font-size: 0.43rem;
+				text-align: center;
+			}
+			.jieshao2 img{
+				width: 100%;
+				margin-top: 0.1rem;
+			}
+			.jieshao2 p{
+				margin-top: 0.1rem;
+				font-size: 0.32rem;
+				color: lightslategray;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<img src="img/logo_03.jpg" class="logo"/>
+			<img src="img/logo1_03.png" class="logo1"/>
+		</header>
+		<div class="banner">
+			<img src="img/QQ截图20170710125031.png" class="banner"/>
+		</div>
+		<div class="jieshao2">
+			<h3>企业文化</h3>
+			<p>小坛子商务信息咨询有限公司成立于沈阳，是东北地区唯一一家对企业进行网络营销实战培训的机构，致力于企业网络领域中成功管理方法的
+				研究，探寻成功网商成长中的实战方案，为成长中企业的不断创新提供专业、贴身的网络服务。</p>
+			<h3>团队展示</h3>
+			<img src="img/QQ截图20170710125452.png"/>
+			<p>一个新团队的产生，往往伴随着又一个奇特的构思和策划，就像新生婴儿，刚来到这个世界，然后对这个世界充满好奇，才开始萌生丰富的想象力。
+				我们的团队也像新生的婴儿一样，拥有着不可抹杀的想象力。能走得很远很远。</p>
+		</div>
+		
+		<div class="footer1"></div>
+	</body>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/footer1.js"></script>
+	<script type="text/javascript" src="js/caipin1.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+"px";
+			window.addEventListener("resize",function(){
+			    document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+"px";	
+			})
+		}
+		$(".footer1").load("temp/footer1.html")
+	</script>
+</html>

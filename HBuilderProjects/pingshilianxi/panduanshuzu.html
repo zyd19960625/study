@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var animal={
+			type:"哺乳动物",
+			class:"1111",
+			func:function(){
+				alert(this.type)
+			}
+		}
+		
+		var people={
+			type:"人",
+//			class:"2222",
+			func:function(){
+				alert(this.type)
+			}
+		}
+		
+		var student={
+			type:"学生",
+			func:function(){
+				alert("我会学习")
+			}
+		}
+		
+		student.__proto__=people;
+		people.__proto__=animal;
+//		var stu=student.__propo__.__propo__;
+		console.log(student.class);
+	</script>
+</html>

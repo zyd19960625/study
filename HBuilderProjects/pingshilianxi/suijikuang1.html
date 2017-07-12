@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机框</title>
+	<style>
+		#can{
+			border: 1px rgba(0,0,0,1) solid;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="600" id="can"></canvas>	
+</body>
+	<script type="text/javascript">
+		
+		function fun(){
+			var can=document.getElementById('can');
+			var ctex=can.getContext("2d");
+			var x=parseInt(Math.random()*601);
+			var y=parseInt(Math.random()*601);
+			var w=parseInt(Math.random()*601);
+			var h=parseInt(Math.random()*601);
+			var r=parseInt(Math.random()*256);
+			var g=parseInt(Math.random()*256);
+			var b=parseInt(Math.random()*256);
+			if (x+w>600) {
+				fun();
+			}else if (y+h>600) {
+				fun();
+			}else{
+				ctex.beginPath();
+				ctex.strokeStyle="rgb("+r+","+g+","+b+")";
+				ctex.rect(x,y,w,h);
+				ctex.stroke();
+				ctex.closePath();
+			}
+		}
+		setInterval(fun,1000);
+	</script>
+</html>

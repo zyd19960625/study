@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"/>
+<html>
+<head>
+	<title>jq--ajax</title>
+	<style type="text/css">
+		ul{
+			width: 400px;
+		}
+		li{
+			width: 400px;
+			height: 30px;
+			line-height: 30px;
+		}
+		span{
+			float: left;
+		}
+		i{
+			width: 150px;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<ul id="UL">
+		<li><span>内容简介</span><i>日期</i></li>
+	</ul>
+</body>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				type:"get",
+				url:"../fornm/ajax-huoqushuju.json",
+				dataType:"json",
+				success:function(data){
+					var UL=document.getElementById('UL');
+					for(i=0;i<data.list.length;i++){
+						UL.innerHTML+="<li><span><a href='jq-ajax2.html?type="+i+"'>"+data.list[i].title+"</a></span><i>"+data.list[i].date+"</i></li>"
+					}
+					
+				}
+
+			})
+		})
+	</script>
+</html>

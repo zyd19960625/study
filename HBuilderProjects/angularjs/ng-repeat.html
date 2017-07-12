@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+		<script type="text/javascript" src="../angular-js/js/angular.js"></script>
+		<style type="text/css">
+			body .big tr td,body .big tr th{
+				width: 16.6%;
+				text-align: center;
+				vertical-align: middle;
+			}
+			img{
+				width: 70px;
+				height: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="table table-bordered big" ng-controller="mc-1">
+			<tr ng-style="myStyle">
+				<th>序号</th>
+				<th>名称</th>
+				<th>价格</th>
+				<th>图片</th>
+				<th>日期</th>
+				<th>删除</th>
+			</tr>
+			<tr ng-repeat="(j,a) in lists">
+				<td>{{$index+1}}</td>
+				<td>{{a.mingcheng}}</td>
+				<td>{{a.price}}</td>
+				<td><img ng-src="img/{{a.tupian}}"/></td>
+				<td>{{a.date}}</td>
+				<td><button class="btn btn-success" ng-click="remove(j)">删除</button></td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript">
+		angular.module("myapp",[]).controller("mc-1",function($scope){
+			$scope.lists=[
+					{
+						"mingcheng":"可乐",
+						"price":"4.5元",
+						"date":"2017-12-22",
+						"tupian":"11.jpg"
+					},
+					{
+						"mingcheng":"雪碧",
+						"price":"3元",
+						"date":"2017-12-23",
+						"tupian":"22.jpg"
+					},
+					{
+						"mingcheng":"橙汁",
+						"price":"2.5元",
+						"date":"2017-12-24",
+						"tupian":"33.jpg"
+					},
+					{
+						"mingcheng":"芬达",
+						"price":"10元",
+						"date":"2017-12-25",
+						"tupian":"44.jpg"
+					},
+					{
+						"mingcheng":"七喜",
+						"price":"4元",
+						"date":"2017-12-26",
+						"tupian":"55.jpg"
+					}
+				]
+			$scope.remove=function(mm){
+				$scope.lists.splice(mm,1);
+			}
+			$scope.myStyle={
+				"background":"red",
+				"color":"blue"
+			}
+		})
+	</script>
+</html>
+ 

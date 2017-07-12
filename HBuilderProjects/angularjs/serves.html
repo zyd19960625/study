@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fornm/css/bootstrap.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div ng-controller="Mc1" ng-style="mystyle">
+				<h1>{{num | geshihua}}</h1>
+			</div>
+		</div>
+	</body>
+	<script src="js/angular.js"></script>
+	<script type="text/javascript">
+		angular.module("app",["ng"])
+		.service("tostr",function(){
+			this.tstr=function(num){
+				return num.toString(16);
+			}
+		})
+		.filter("geshihua",["tostr",function(tostr){
+			return function(numb){
+				return numb.toString(2);
+			}
+		}])
+		
+//		.filter("geshihua",function(){
+			
+			//自定义过滤器
+//			return function(value){
+//				return "￥"+value.toFixed(3);
+//				return "二进制为："+value.toString(2);
+//				return Math.PI+value.toString(2)
+//			}
+			
+//		})
+		.controller("Mc1",function($scope,tostr){
+			$scope.num=12323435;
+			$scope.r=tostr.tstr(200);
+			$scope.g=tostr.tstr(120);
+			$scope.b=tostr.tstr(50);
+			$scope.mystyle={
+				"background":"#"+$scope.r+$scope.g+$scope.b
+			}
+		})
+	</script>
+</html>

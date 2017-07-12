@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#img{
+				width: 100px;
+				height: 100px;
+				float: left;
+				border: 1px black solid;
+			}
+			img{
+				width: 100px;
+				height: 100px;
+				display: block;
+			}
+			select{
+				width: 100px;
+			}
+			.jindu{
+				width: 1000px;
+				height: 30px;
+				margin: 100px auto;
+				border: 1px black solid;
+			}
+			span{
+				width: 1000px;
+				height: 30px;
+				display: block;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aaa" ng-controller="Mc1">
+			<select name="one" ng-model="image">
+				<option value="1">第一张</option>
+				<option value="2">第二张</option>
+				<option value="3">第三张</option>
+				<option value="4">第四张</option>
+				<option value="5">第五张</option>
+			</select>
+			<div id="img">
+				<img ng-src="img/{{image}}.jpg"/>
+			</div>
+			
+			<div class="jindu">
+				<span ng-style="mstyle"></span>
+			</div>
+		</div>
+	</body>
+	<script src="../angular-js/js/angular.js"></script>
+	<script type="text/javascript">
+		angular.module("app",["ng"]).controller("Mc1",function($scope,$interval){
+//			for(var i=1;i<101;i++){
+//				nam=i*10;
+//				$scope.mstyle={
+//					"width":nam+"px"
+//				}
+//			}
+		$scope.nam=1000;	
+		var time=$interval(function(){
+			$scope.nam-=1;
+			$scope.mstyle={
+				"width":$scope.nam+"px"
+			}
+			if ($scope.nam==100) {
+				$interval.cancel(time);
+			}
+		},5)
+		
+			
+		})
+	</script>
+</html>
