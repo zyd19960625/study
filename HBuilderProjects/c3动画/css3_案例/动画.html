@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type='text/css'>
+.animated_div {
+    width: 60px;
+    height: 40px;
+    background: #92B901;
+    color: #ffffff;
+    position: relative;
+    font-weight: bold;
+    font: bold 12px '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+    padding: 20px 10px 0px 10px;
+    animation: animated_div 5s 1;
+    -moz-animation: animated_div 5s 1;
+    -webkit-animation: animated_div 5s 1;
+    -o-animation: animated_div 5s 1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+@keyframes animated_div
+	{
+	0%		{transform: rotate(0deg);left:0px;}
+	25%		{transform: rotate(20deg);left:0px;}
+	50%		{transform: rotate(0deg);left:500px;}
+	55%		{transform: rotate(0deg);left:500px;}
+	70%		{transform: rotate(0deg);left:500px;background:#1ec7e6;}
+	100%	{transform: rotate(-360deg);left:0px;}
+	}
+
+@-webkit-keyframes animated_div
+	{
+	0%		{-webkit-transform: rotate(0deg);left:0px;}
+	25%		{-webkit-transform: rotate(20deg);left:0px;}
+	50%		{-webkit-transform: rotate(0deg);left:500px;}
+	55%		{-webkit-transform: rotate(0deg);left:500px;}
+	70%		{-webkit-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+	100%	{-webkit-transform: rotate(-360deg);left:0px;}
+	}
+
+@-moz-keyframes animated_div
+	{
+	0%   {-moz-transform: rotate(0deg);left:0px;}
+	25%  {-moz-transform: rotate(20deg);left:0px;}
+	50%  {-moz-transform: rotate(0deg);left:500px;}
+	55%  {-moz-transform: rotate(0deg);left:500px;}
+	70%  {-moz-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+	100% {-moz-transform: rotate(-360deg);left:0px;}
+	}
+
+@-o-keyframes animated_div
+	{
+	0%   {transform: rotate(0deg);left:0px;}
+	25%  {transform: rotate(20deg);left:0px;}
+	50%  {transform: rotate(0deg);left:500px;}
+	55%  {transform: rotate(0deg);left:500px;}
+	70%  {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+	100% {transform: rotate(-360deg);left:0px;}
+	}
+
+
+
+.div{width:500px; height:30px; background:#ccc;}
+.div i {
+    width: 1%;
+    background: green;
+    display: inline-block;
+    height: 100%;}
+.div:hover i{animation:loading 3s ease-out infinite}
+@keyframes loading{
+0%{width:0;}
+100%{width:100%}	
+}
+</style>
+</head>
+
+<body>
+<div class="animated_div">CSS3动画</div>
+<div class="div">
+<i></i>
+</div>
+</body>
+</html>

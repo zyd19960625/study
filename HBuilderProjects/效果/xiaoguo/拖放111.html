@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            width:550px;
+            height:100px;
+            background-color: orange;
+        }
+        li{
+            list-style-type: none;
+            width:120px;
+            height:40px;
+            border:2px solid red;
+            background-color: #005BAC;
+            font-size:35px;color:white;
+            text-align: center;
+            float:left;
+            margin-left: 2px;
+        }
+        #fang{
+            height:400px;
+            width:200px;
+            border:2px solid #363A97;
+            clear:both;
+            margin:0 150px;
+        }
+    </style>
+</head>
+    <body>
+        <ul id="ul0">
+            <li draggable="true">1111</li>
+            <li draggable="true">2222</li>
+            <li draggable="true">3333</li>
+            <li draggable="true">4444</li>
+        </ul>
+        <div id="fang"></div>
+    </body>
+        <script>
+
+            var liArr=document.getElementsByTagName("li");
+            var fang=document.getElementById("fang");
+            var i=0;
+            for(i=0;i<liArr.length;i++){
+                liArr[i].aaa=i;			//获取到li
+                liArr[i].ondragstart=function(ev){              //开始拖动
+                    var ev =ev || window.event;
+                    ev.dataTransfer.setData('ttt',this.aaa)             ;
+                    this.style.backgroundColor="white";
+                    this.style.color="red";
+                }
+                liArr[i].ondrag=function(){
+                    ul0.style.backgroundColor="red";
+                }
+                fang.ondragover=function(ev) {
+                    ev.preventDefault();
+                    this.style.backgroundColor="yellow";
+                }
+                fang.ondrop= function (ev) {
+                    var data=ev.dataTransfer.getData("ttt");
+                    this.appendChild( liArr[data] );
+                for(i=0;i<liArr.length;i++){
+                    liArr[i].aaa=i;
+                }
+                }
+            }
+        </script>
+</html>

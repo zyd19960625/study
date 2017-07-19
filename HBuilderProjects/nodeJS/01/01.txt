@@ -1,0 +1,46 @@
+3333JS 使用
+
+指令
+node 文件路径
+声明 使用nideJS运行文件  后面接入的就是 运行的文件的路径
+
+__dirname  *两个_  文件所在的文件夹的路径
+
+__filename        文件所在的路径
+
+ctrl+c 手动跳出当前执行的环境
+
+cd 进如文件夹
+cd ..退出文件
+
+
+
+nodeJS运行文件的时候
+当程序执行完成 || 错误的时候     ====》 跳出
+
+异步任务：
+setTimeout
+setInterval
+
+
+同步任务：
+congole.log()
+
+
+同步任务和异步任务执行的时候
+不论位置在哪，同步任务永远优先执行
+同步任务  代码有顺序  自上而下
+
+var a=0;
+function fun(){
+	console.log(a);
+	a++;
+}
+var time=setInterval(fun,100);
+
+console.log(1);
+console.log(2);
+
+
+
+

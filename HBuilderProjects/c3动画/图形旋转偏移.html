@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            border:1px solid red;
+            margin:20px auto;
+        }
+        .item2{
+            /*也可以这样写transform: translateX(30px) translateY(20px);向右平移30px向下平移20px*/
+            transform: translate(20px,30px);
+        }
+        .item3{
+        	/*逆时针旋转30度*/
+            transform:rotate(-30deg);
+        }
+        .item4{
+        	/*比例缩小到一半*/
+            transform:scale(0.5);
+        }
+        .item5{
+        	/*x轴倾斜10度y轴倾斜30度*/
+            transform: skew(10deg,30deg);
+        }
+        .item6{
+        	/*matrix(a,b,c,d,e,f)如果e和f不为0，则表示该内容需要进行位移,e为x轴  f为y轴a表示在X轴上缩放的比例，d表示在Y轴上缩放的比例*/
+            transform:matrix(1,0,0,1,30,30);
+        }
+        .item7{
+        	/**/
+            transform: translate(30px,20px) rotate(30deg) scale(0.5) skew(50deg);
+        }
+    </style>
+</head>
+<body>
+<div class="item1"></div>
+<div class="item2"></div>
+<div class="item3"></div>
+<div class="item4"></div>
+<div class="item5"></div>
+<div class="item6"></div>
+<div class="item7"></div>
+</body>
+</html>

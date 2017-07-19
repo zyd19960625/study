@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{font-size: 30px;}
+        meter{width:200px;height:40px;}
+        span{font-size: 35px;}
+    </style>
+</head>
+<body>
+    <p>手机充电中：</p>
+    <meter value="20" title="" min="0" max="100"  id="meter0"></meter>
+    <span id="s"></span>
+</body>
+
+
+<script>
+//    var i=0;
+//    function dian(){
+//        i++;
+//        meter0.value=i;
+//        meter0.title=i+"%";
+//        s.innerHTML=meter0.title;
+//        if(i>=100){
+//            i=0;
+//        }
+//    }
+//    setInterval(dian,100);
+
+    function dian(){
+        var m=document.getElementById("meter0");
+        if(m.value==100) {
+            m.value=0;
+        }
+        m.value=m.value+10;
+        m.title=m.value;
+    }
+    setInterval(dian,500);
+</script>
+</html>
